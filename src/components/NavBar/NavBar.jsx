@@ -34,9 +34,6 @@ export const useStyles = makeStyles((theme) => ({
       background: 'transparent',
     },
   },
-  logo: {
-    width: '90px',
-  },
   navLink: {
     margin: '0 2px',
     color: '#b3b3b3',

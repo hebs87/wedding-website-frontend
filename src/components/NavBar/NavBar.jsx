@@ -15,7 +15,6 @@ const NavBar = () => {
       <AppBar className={classes.navBar} position="static">
         <Toolbar classes={{root: classes.toolbarRoot}}>
           <Button
-            exact to="/"
             className={classes.logoLink}>
             <Typography variant='h3' component='h3'>
               Sunny &amp; Kim
@@ -23,21 +22,18 @@ const NavBar = () => {
           </Button>
           <div>
             <Button
-              exact to="/"
               className={classes.navLink}
               activeStyle={{opacity: 1}}
             >
               Wedding
             </Button>
             <Button
-              exact to="/location"
               className={classes.navLink}
               activeStyle={{opacity: 1}}
             >
               Location
             </Button>
             <Button
-              exact to="/rsvp"
               className={classes.navLink}
               activeStyle={{opacity: 1}}
             >

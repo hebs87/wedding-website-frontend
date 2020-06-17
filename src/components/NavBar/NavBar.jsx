@@ -5,6 +5,11 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 // import {NavLink} from "react-router-dom";
 import {useStyles} from './NavBar.styles';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faRing} from "@fortawesome/free-solid-svg-icons/faRing";
+import {faMapMarkedAlt} from "@fortawesome/free-solid-svg-icons/faMapMarkedAlt";
+import {faCommentDots} from "@fortawesome/free-solid-svg-icons/faCommentDots";
+
 
 const NavBar = () => {
   // Get the classes from the useStyles function
@@ -25,18 +30,21 @@ const NavBar = () => {
               className={classes.navLink}
               activeStyle={{opacity: 1}}
             >
+              <FontAwesomeIcon className={classes.faIcon} icon={faRing}/>
               Wedding
             </Button>
             <Button
               className={classes.navLink}
               activeStyle={{opacity: 1}}
             >
+              <FontAwesomeIcon className={classes.faIcon} icon={faMapMarkedAlt}/>
               Location
             </Button>
             <Button
               className={classes.navLink}
               activeStyle={{opacity: 1}}
             >
+              <FontAwesomeIcon className={classes.faIcon} icon={faCommentDots}/>
               RSVP
             </Button>
           </div>

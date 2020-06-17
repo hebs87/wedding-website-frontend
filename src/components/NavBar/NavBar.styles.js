@@ -44,4 +44,8 @@ export const useStyles = makeStyles((theme) => ({
       color: '#d83600',
     },
   },
+  faIcon: {
+    fontSize: '1.3rem',
+    marginRight: '7px',
+  },
 }));

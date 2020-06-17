@@ -30,4 +30,8 @@ export const useStyles = makeStyles((theme) => ({
       color: '#b3b3b3',
     },
   },
+  faIcon: {
+    fontSize: '1.3rem',
+    marginLeft: '7px',
+  },
 }));

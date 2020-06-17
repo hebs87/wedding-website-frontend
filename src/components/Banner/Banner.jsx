@@ -3,6 +3,8 @@ import {useStyles} from './Banner.styles';
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faCommentDots} from "@fortawesome/free-solid-svg-icons/faCommentDots";
 
 const Banner = ({imageUrl, title, firstTextLine, secondTextLine, button}) => {
   // Get the classes from the useStyles function
@@ -41,6 +43,7 @@ const Banner = ({imageUrl, title, firstTextLine, secondTextLine, button}) => {
           button &&
           <Button className={classes.bannerBtn}>
             {button}
+            <FontAwesomeIcon className={classes.faIcon} icon={faCommentDots}/>
           </Button>
         }
       </Container>

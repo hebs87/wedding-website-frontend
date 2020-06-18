@@ -4,7 +4,7 @@ import Paper from "@material-ui/core/Paper";
 const ImagePaper = props => {
   return (
     <Paper
-      className="Project"
+      className="image-paper"
       // style={{
       //   background: ,
       // }}

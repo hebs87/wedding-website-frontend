@@ -9,8 +9,14 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   position: fixed;
+  align-items: center;
+  color: #b3b3b3;
   .logo {
     padding: 15px 0;
+  }
+  z-index: 999;
+  h3 {
+    cursor: pointer;
   }
 `
 

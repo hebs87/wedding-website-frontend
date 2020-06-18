@@ -1,19 +1,13 @@
 import React from 'react';
 import './App.css';
-import MobileNavBar from "./components/NavBar/MobileNavBar";
+import NavBarContainer from "./components/NavBar/NavBarContainer";
 import Banner from "./components/Banner/Banner";
 import OrangeTree from './static/assets/orange-tree.jpg';
-import NavBar from "./components/NavBar/NavBar";
 
 const App = () => {
   return (
     <div className="App">
-      <div className='main-nav'>
-        <NavBar/>
-      </div>
-      <div className="mobile-nav">
-        <MobileNavBar/>
-      </div>
+      <NavBarContainer/>
       <Banner
         imageUrl={OrangeTree}
         title={'Join us for our Sunshine State Wedding'}

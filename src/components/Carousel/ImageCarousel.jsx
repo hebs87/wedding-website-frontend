@@ -1,27 +1,26 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import Carousel from 'react-material-ui-carousel';
-import ImagePaper from "./ImagePaper";
+import './ImageCarousel.styles.css';
 
 const ImageCarousel = ({images}) => {
     return (
-      <div style={{marginTop: "50px"}}>
+      <Fragment>
         <Carousel
           className="carousel"
           autoPlay={true}
-          timer={300}
+          interval={3000}
           animation='fade'
-          indicators={true}
-          timeout={300}
+          indicators={false}
+          timeout={500}
           navButtonsAlwaysVisible={false}
-
         >
           {
             images.map(image => {
-              return <ImagePaper key={image.id} image={image.image}/>
+              return <img className='image' key={image.id} src={image.image} alt={`Image ${image.id}`}/>
             })
           }
         </Carousel>
-      </div>
+      </Fragment>
     )
 }
 

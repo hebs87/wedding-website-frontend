@@ -1,12 +1,12 @@
 import React, {Component, Fragment} from "react";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
+import Link from "@material-ui/core/Link";
 import Banner from "../../components/Banner/Banner";
 import ImageCarousel from "../../components/Carousel/ImageCarousel";
 import OrangeTree from "../../static/assets/orange-tree.jpg";
 import WeddingDay from "../../static/assets/wedding-day.jpg";
 import UniversalStudios from "../../static/assets/universal-studios.jpg";
-import Link from "@material-ui/core/Link";
 
 class WeddingPage extends Component {
   constructor(props) {
@@ -37,7 +37,7 @@ class WeddingPage extends Component {
       <Fragment>
         <Banner
           imageUrl={OrangeTree}
-          title={'Join us for our Sunshine State Wedding'}
+          title={'Join Us For Our Sunshine State Wedding'}
           firstTextLine={'1 June, 2021'}
           secondTextLine={'Orlando, Florida'}
           button={'RSVP'}
@@ -71,7 +71,7 @@ class WeddingPage extends Component {
         </Container>
         <Banner
           imageUrl={UniversalStudios}
-          title={'A Day at Universal'}
+          title={'A Day At Universal'}
           firstTextLine={'3 June, 2021'}
         />
         <Container maxWidth='md'>

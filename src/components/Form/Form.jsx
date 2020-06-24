@@ -1,4 +1,6 @@
+import {styles} from './Form.styles';
 import React, {Component} from "react";
+import {withStyles} from '@material-ui/core/styles';
 import Grid from "@material-ui/core/Grid";
 import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
@@ -17,67 +19,74 @@ import MenuItem from "@material-ui/core/MenuItem";
 
 class Form extends Component {
   render() {
+    const {classes} = this.props;
+
     return (
       <div>
         <Grid container spacing={3}>
-          <Grid item xs={12} md={6}>
-            <FormControl>
-              <FontAwesomeIcon icon={faUsers}/>
-              <InputLabel id="guest-group">Guest / Group</InputLabel>
-              <Select
-                labelId="guest-group"
-                // value={age}
-                // onChange={handleChange}
-              >
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
-              </Select>
-            </FormControl>
+          <Grid item xs={12} md={6} className={classes.formControl}>
+            <FontAwesomeIcon icon={faUsers} className={classes.formIcon}/>
+            <TextField
+              className={classes.formField}
+              id="guest-group"
+              select
+              label="Guest/Group"
+              // value={currency}
+              // onChange={handleChange}
+            >
+            </TextField>
           </Grid>
-          <Grid item xs={12} md={6}>
-            <FormControl>
-              <FontAwesomeIcon icon={faCheckCircle}/>
-              <InputLabel id="attending">Can you make it??</InputLabel>
-              <Select
-                labelId="attending"
-                // value={age}
-                // onChange={handleChange}
-              >
-                <MenuItem value={'Yes'}>Yes</MenuItem>
-                <MenuItem value={'No'}>No</MenuItem>
-              </Select>
-            </FormControl>
+          <Grid item xs={12} md={6} className={classes.formControl}>
+            <FontAwesomeIcon icon={faCheckCircle} className={classes.formIcon}/>
+            <TextField
+              className={classes.formField}
+              id="attending"
+              select
+              label="Can you make it?"
+              // value={currency}
+              // onChange={handleChange}
+            />
           </Grid>
-          <Grid item xs={12} md={6}>
-            <FormControl>
-              <FontAwesomeIcon icon={faTimesCircle}/>
-              <TextField id="not-attending" label="Anyone in your group can't make it?"/>
-            </FormControl>
+          <Grid item xs={12} md={6} className={classes.formControl}>
+            <FontAwesomeIcon icon={faTimesCircle} className={classes.formIcon}/>
+            <TextField
+              className={classes.formField}
+              id="not-attending"
+              label="Anyone in your group can't make it?"
+            />
           </Grid>
-          <Grid item xs={12} md={6}>
-            <FormControl>
-              <FontAwesomeIcon icon={faMusic}/>
-              <TextField id="song" label="Pick a song for our playlist"/>
-            </FormControl>
+          <Grid item xs={12} md={6} className={classes.formControl}>
+            <FontAwesomeIcon icon={faMusic} className={classes.formIcon}/>
+            <TextField
+              className={classes.formField}
+              id="song"
+              label="Pick a song for our playlist"
+            />
           </Grid>
-          <Grid item xs={12} md={6}>
-            <FormControl>
-              <FontAwesomeIcon icon={faGlassMartiniAlt}/>
-              <TextField id="drink" label="What's your drink?"/>
-            </FormControl>
+          <Grid item xs={12} md={6} className={classes.formControl}>
+            <FontAwesomeIcon icon={faGlassMartiniAlt} className={classes.formIcon}/>
+            <TextField
+              className={classes.formField}
+              id="drink"
+              label="What's your drink?"
+            />
           </Grid>
-          <Grid item xs={12} md={6}>
-            <FormControl>
-              <FontAwesomeIcon icon={faCheese}/>
-              <TextField id="dietary-requirements" label="Any dietary requirements"/>
-            </FormControl>
+          <Grid item xs={12} md={6} className={classes.formControl}>
+            <FontAwesomeIcon icon={faCheese} className={classes.formIcon}/>
+            <TextField
+              className={classes.formField}
+              id="dietary-requirements"
+              label="Any dietary requirements"
+            />
           </Grid>
-          <Grid item xs={12}>
-            <FormControl>
-              <FontAwesomeIcon icon={faComment}/>
-              <TextareaAutosize id="additional-info" rowsMin={1} placeholder="Anything else we need to know?"/>
-            </FormControl>
+          <Grid item xs={12} className={classes.textAreaControl}>
+            <FontAwesomeIcon icon={faComment} className={classes.textAreaIcon}/>
+            <TextareaAutosize
+              className={classes.textAreaField}
+              id="additional-info"
+              rowsMin={3}
+              placeholder="Anything else we need to know?"
+            />
           </Grid>
         </Grid>
       </div>
@@ -85,4 +94,4 @@ class Form extends Component {
   }
 }
 
-export default Form;
+export default withStyles(styles)(Form);

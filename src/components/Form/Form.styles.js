@@ -12,6 +12,7 @@ export const styles = theme => ({
   },
   formField: {
     width: '100%',
+    textAlign: 'left',
   },
   textAreaControl: {
     display: 'flex',
@@ -26,5 +27,6 @@ export const styles = theme => ({
   textAreaField: {
     width: '100%',
     fontSize: 16,
+    textAlign: 'left',
   },
 });

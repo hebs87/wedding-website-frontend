@@ -2,9 +2,6 @@ import {styles} from './Form.styles';
 import React, {Component} from "react";
 import {withStyles} from '@material-ui/core/styles';
 import Grid from "@material-ui/core/Grid";
-import FormControl from "@material-ui/core/FormControl";
-import InputLabel from "@material-ui/core/InputLabel";
-import Select from "@material-ui/core/Select";
 import TextField from "@material-ui/core/TextField";
 import TextareaAutosize from "@material-ui/core/TextareaAutosize";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -16,10 +13,22 @@ import {faGlassMartiniAlt} from "@fortawesome/free-solid-svg-icons/faGlassMartin
 import {faCheese} from "@fortawesome/free-solid-svg-icons/faCheese";
 import {faComment} from "@fortawesome/free-solid-svg-icons/faComment";
 import MenuItem from "@material-ui/core/MenuItem";
+import {GUESTS, ATTENDING_CHOICES} from "./FormChoices";
 
 class Form extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      guests: GUESTS,
+      attendingChoices: ATTENDING_CHOICES,
+    };
+  }
+
   render() {
+    // Destructure props and state
     const {classes} = this.props;
+    const {guests, attendingChoices} = this.state;
 
     return (
       <div>
@@ -34,6 +43,11 @@ class Form extends Component {
               // value={currency}
               // onChange={handleChange}
             >
+              {guests.map(guest => (
+                <MenuItem key={guest.value} value={guest.value}>
+                  {guest.label}
+                </MenuItem>
+              ))}
             </TextField>
           </Grid>
           <Grid item xs={12} md={6} className={classes.formControl}>
@@ -45,7 +59,13 @@ class Form extends Component {
               label="Can you make it?"
               // value={currency}
               // onChange={handleChange}
-            />
+            >
+              {attendingChoices.map(choice => (
+                <MenuItem key={choice.value} value={choice.value}>
+                  {choice.label}
+                </MenuItem>
+              ))}
+            </TextField>
           </Grid>
           <Grid item xs={12} md={6} className={classes.formControl}>
             <FontAwesomeIcon icon={faTimesCircle} className={classes.formIcon}/>

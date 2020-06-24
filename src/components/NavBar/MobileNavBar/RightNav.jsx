@@ -1,10 +1,10 @@
 import React from 'react';
+import {NavLink} from 'react-router-dom';
 import styled from 'styled-components';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faRing} from "@fortawesome/free-solid-svg-icons/faRing";
 import {faMapMarkedAlt} from "@fortawesome/free-solid-svg-icons/faMapMarkedAlt";
 import {faCommentDots} from "@fortawesome/free-solid-svg-icons/faCommentDots";
-import Button from "@material-ui/core/Button";
 
 const Ul = styled.ul`
   list-style: none;
@@ -45,16 +45,31 @@ const RightNav = ({open}) => {
   return (
     <Ul open={open}>
       <li>
-        <FontAwesomeIcon className='nav-link-icon' icon={faRing}/>
-        Wedding
+        <NavLink
+          exact to="/"
+          activeStyle={{opacity: 1}}
+        >
+          <FontAwesomeIcon className='nav-link-icon' icon={faRing}/>
+          Wedding
+        </NavLink>
       </li>
       <li>
-        <FontAwesomeIcon className='nav-link-icon' icon={faMapMarkedAlt}/>
-        Location
+        <NavLink
+          exact to="/location"
+          activeStyle={{opacity: 1}}
+        >
+          <FontAwesomeIcon className='nav-link-icon' icon={faMapMarkedAlt}/>
+          Location
+        </NavLink>
       </li>
       <li>
-        <FontAwesomeIcon className='nav-link-icon' icon={faCommentDots}/>
-        RSVP
+        <NavLink
+          exact to="/rsvp"
+          activeStyle={{opacity: 1}}
+        >
+          <FontAwesomeIcon className='nav-link-icon' icon={faCommentDots}/>
+          RSVP
+        </NavLink>
       </li>
     </Ul>
   )

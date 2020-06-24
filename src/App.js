@@ -1,4 +1,5 @@
 import React from 'react';
+import {Route} from 'react-router-dom';
 import './App.css';
 import NavBarContainer from "./components/NavBar/NavBarContainer";
 import WeddingPage from "./pages/Wedding/Wedding";
@@ -10,9 +11,9 @@ const App = () => {
   return (
     <div className="App">
       <NavBarContainer/>
-      {/*<WeddingPage/>*/}
-      {/*<Location/>*/}
-      <RSVP/>
+      <Route exact path="/" component={WeddingPage}/>
+      <Route exact path="/location" component={Location}/>
+      <Route exact path="/rsvp" component={RSVP}/>
       <Footer/>
     </div>
   );

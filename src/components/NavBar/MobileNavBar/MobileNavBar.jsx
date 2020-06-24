@@ -1,4 +1,5 @@
 import React from 'react';
+import {NavLink} from 'react-router-dom';
 import styled from 'styled-components';
 import Burger from './Burger';
 
@@ -24,7 +25,11 @@ const MobileNavBar = () => {
   return (
     <Nav>
       <div className="logo">
-        <h3>Sunny &amp; Kim</h3>
+        <NavLink
+          exact to="/"
+        >
+          <h3>Sunny &amp; Kim</h3>
+        </NavLink>
       </div>
       <Burger/>
     </Nav>

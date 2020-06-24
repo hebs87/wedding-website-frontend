@@ -44,7 +44,13 @@ class Form extends Component {
   handleChange = event => {
     let formSelections = this.state.formSelections;
     formSelections[event.target.name] = event.target.value
-    this.setState({formSelections});
+    this.setState({
+      formSelections,
+      guestGroupHasError: false,
+      attendingHasError: false,
+      songHasError: false,
+      drinkHasError: false,
+    });
   };
 
   submitForm = event => {
@@ -63,6 +69,24 @@ class Form extends Component {
     }
     this.setState({guestGroupHasError, attendingHasError, songHasError, drinkHasError},
       () => console.log(guestGroupHasError, attendingHasError, songHasError, drinkHasError))
+  }
+
+  resetForm = event => {
+    this.setState({
+      formSelections: {
+        'guestGroup': '',
+        'attending': '',
+        'notAttending': '',
+        'song': '',
+        'drink': '',
+        'dietaryRequirements': '',
+        'additionalInfo': ''
+      },
+      guestGroupHasError: false,
+      attendingHasError: false,
+      songHasError: false,
+      drinkHasError: false,
+    }, () => console.log(this.state))
   }
 
   render() {
@@ -185,11 +209,11 @@ class Form extends Component {
             />
           </Grid>
           <Grid item xs={12} className={classes.btnControl}>
-            <Button className={classes.formBtn}>
+            <Button className={classes.formBtn} onClick={this.submitForm}>
               Submit
               <FontAwesomeIcon className={classes.faIcon} icon={faCheckCircle}/>
             </Button>
-            <Button className={classes.formBtn}>
+            <Button className={classes.formBtn} onClick={this.resetForm}>
               Reset
               <FontAwesomeIcon className={classes.faIcon} icon={faTimesCircle}/>
             </Button>

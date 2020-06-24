@@ -1,5 +1,5 @@
 import {styles} from './Form.styles';
-import React, {Component, Fragment} from "react";
+import React, {Component} from "react";
 import {withStyles} from '@material-ui/core/styles';
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
@@ -16,7 +16,6 @@ import {faCheese} from "@fortawesome/free-solid-svg-icons/faCheese";
 import {faComment} from "@fortawesome/free-solid-svg-icons/faComment";
 import MenuItem from "@material-ui/core/MenuItem";
 import {GUESTS, ATTENDING_CHOICES} from "./FormChoices";
-import {faCommentDots} from "@fortawesome/free-solid-svg-icons/faCommentDots";
 
 class Form extends Component {
   constructor(props) {

@@ -29,4 +29,25 @@ export const styles = theme => ({
     fontSize: 16,
     textAlign: 'left',
   },
+  btnControl: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  formBtn: {
+    backgroundColor: '#b3b3b3',
+    color: '#414141',
+    width: '10rem',
+    margin: '0 15px',
+    borderRadius: '1.3rem',
+    transition: 'all 0.35s ease-in-out',
+    '&:hover': {
+      backgroundColor: '#d83600',
+      color: '#b3b3b3',
+    },
+  },
+  faIcon: {
+    fontSize: '1.3rem',
+    marginLeft: '7px',
+  },
+
 });

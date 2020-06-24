@@ -16,6 +16,7 @@ import {faCheese} from "@fortawesome/free-solid-svg-icons/faCheese";
 import {faComment} from "@fortawesome/free-solid-svg-icons/faComment";
 import MenuItem from "@material-ui/core/MenuItem";
 import {GUESTS, ATTENDING_CHOICES} from "./FormChoices";
+import {faCommentDots} from "@fortawesome/free-solid-svg-icons/faCommentDots";
 
 class Form extends Component {
   constructor(props) {
@@ -183,8 +184,15 @@ class Form extends Component {
               onChange={(e) => this.handleChange(e)}
             />
           </Grid>
-          <Grid item xs={12}>
-            <Button onClick={this.submitForm}>Submit</Button>
+          <Grid item xs={12} className={classes.btnControl}>
+            <Button className={classes.formBtn}>
+              Submit
+              <FontAwesomeIcon className={classes.faIcon} icon={faCheckCircle}/>
+            </Button>
+            <Button className={classes.formBtn}>
+              Reset
+              <FontAwesomeIcon className={classes.faIcon} icon={faTimesCircle}/>
+            </Button>
           </Grid>
         </Grid>
       </div>

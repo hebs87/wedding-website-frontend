@@ -1,9 +1,11 @@
 import {styles} from './Form.styles';
-import React, {Component} from "react";
+import React, {Component, Fragment} from "react";
 import {withStyles} from '@material-ui/core/styles';
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import TextareaAutosize from "@material-ui/core/TextareaAutosize";
+import FormHelperText from "@material-ui/core/FormHelperText";
+import Button from "@material-ui/core/Button";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faUsers} from "@fortawesome/free-solid-svg-icons/faUsers";
 import {faCheckCircle} from "@fortawesome/free-solid-svg-icons/faCheckCircle";
@@ -30,20 +32,45 @@ class Form extends Component {
         'drink': '',
         'dietaryRequirements': '',
         'additionalInfo': ''
-      }
+      },
+      guestGroupHasError: false,
+      attendingHasError: false,
+      songHasError: false,
+      drinkHasError: false,
     };
   }
 
   handleChange = event => {
     let formSelections = this.state.formSelections;
     formSelections[event.target.name] = event.target.value
-    this.setState({formSelections}, () => console.log(this.state.formSelections));
+    this.setState({formSelections});
   };
+
+  submitForm = event => {
+    let guestGroupHasError = false, attendingHasError = false, songHasError = false, drinkHasError = false;
+    if (!this.state.formSelections.guestGroup) {
+      guestGroupHasError = true;
+    }
+    if (!this.state.formSelections.attending) {
+      attendingHasError = true;
+    }
+    if (!this.state.formSelections.song) {
+      songHasError = true;
+    }
+    if (!this.state.formSelections.drink) {
+      drinkHasError = true;
+    }
+    this.setState({guestGroupHasError, attendingHasError, songHasError, drinkHasError},
+      () => console.log(guestGroupHasError, attendingHasError, songHasError, drinkHasError))
+  }
 
   render() {
     // Destructure props and state
     const {classes} = this.props;
-    const {guests, attendingChoices, formSelections} = this.state;
+    const {
+      guests, attendingChoices, formSelections, guestGroupHasError, attendingHasError,
+      songHasError, drinkHasError
+    } = this.state;
 
     return (
       <div>
@@ -65,6 +92,10 @@ class Form extends Component {
                 </MenuItem>
               ))}
             </TextField>
+            {
+              guestGroupHasError &&
+              <FormHelperText>Please choose an option!</FormHelperText>
+            }
           </Grid>
           <Grid item xs={12} md={6} className={classes.formControl}>
             <FontAwesomeIcon icon={faCheckCircle} className={classes.formIcon}/>
@@ -83,6 +114,10 @@ class Form extends Component {
                 </MenuItem>
               ))}
             </TextField>
+            {
+              attendingHasError &&
+              <FormHelperText>Please choose an option!</FormHelperText>
+            }
           </Grid>
           <Grid item xs={12} md={6} className={classes.formControl}>
             <FontAwesomeIcon icon={faTimesCircle} className={classes.formIcon}/>
@@ -105,6 +140,10 @@ class Form extends Component {
               value={formSelections.song}
               onChange={(e) => this.handleChange(e)}
             />
+            {
+              songHasError &&
+              <FormHelperText>Please pick a song!</FormHelperText>
+            }
           </Grid>
           <Grid item xs={12} md={6} className={classes.formControl}>
             <FontAwesomeIcon icon={faGlassMartiniAlt} className={classes.formIcon}/>
@@ -116,6 +155,10 @@ class Form extends Component {
               value={formSelections.drink}
               onChange={(e) => this.handleChange(e)}
             />
+            {
+              drinkHasError &&
+              <FormHelperText>Please pick a drink!</FormHelperText>
+            }
           </Grid>
           <Grid item xs={12} md={6} className={classes.formControl}>
             <FontAwesomeIcon icon={faCheese} className={classes.formIcon}/>
@@ -139,6 +182,9 @@ class Form extends Component {
               value={formSelections.additionalInfo}
               onChange={(e) => this.handleChange(e)}
             />
+          </Grid>
+          <Grid item xs={12}>
+            <Button onClick={this.submitForm}>Submit</Button>
           </Grid>
         </Grid>
       </div>

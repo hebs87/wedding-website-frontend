@@ -52,6 +52,29 @@ class Form extends Component {
     });
   };
 
+  postForm = () => {
+    let formSelections = this.state.formSelections;
+    fetch(`${process.env.REACT_APP_URL}/reply/rsvp/`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        guest_name: formSelections.guestGroup,
+        attending: formSelections.attending,
+        not_attending: formSelections.notAttending ? formSelections.notAttending : "N/A",
+        favourite_song: formSelections.song,
+        favourite_drink: formSelections.drink,
+        dietary_requirements: formSelections.dietaryRequirements ? formSelections.dietaryRequirements : "N/A",
+        additional_info: formSelections.additionalInfo ? formSelections.additionalInfo : "N/A"
+      })
+    })
+      .then(res => res.json())
+      .then(() => alert('Thanks for your reply!'))
+      .then(() => window.location.href = '/')
+      .catch(err => console.log(err));
+  }
+
   submitForm = event => {
     let guestGroupHasError = false, attendingHasError = false, songHasError = false, drinkHasError = false;
     if (!this.state.formSelections.guestGroup) {
@@ -67,7 +90,12 @@ class Form extends Component {
       drinkHasError = true;
     }
     this.setState({guestGroupHasError, attendingHasError, songHasError, drinkHasError},
-      () => console.log(guestGroupHasError, attendingHasError, songHasError, drinkHasError))
+      () => {
+        if (!this.state.guestGroupHasError && !this.state.attendingHasError
+          && !this.state.songHasError && !this.state.drinkHasError) {
+          this.postForm();
+        }
+      })
   }
 
   resetForm = event => {
@@ -85,7 +113,7 @@ class Form extends Component {
       attendingHasError: false,
       songHasError: false,
       drinkHasError: false,
-    }, () => console.log(this.state))
+    });
   }
 
   render() {

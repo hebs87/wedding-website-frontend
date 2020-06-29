@@ -24,12 +24,16 @@ export const useStyles = makeStyles((theme) => ({
   logoLink: {
     marginRight: '0',
     color: '#b3b3b3',
+    textDecoration: 'none',
     [theme.breakpoints.up('sm')]: {
       marginRight: '10px',
     },
     '&:hover': {
       background: 'transparent',
     },
+  },
+  logoText: {
+    fontFamily: 'Sacramento, cursive',
   },
   navLink: {
     margin: '0 2px',
@@ -39,13 +43,15 @@ export const useStyles = makeStyles((theme) => ({
     textTransform: 'uppercase',
     fontWeight: 'bold',
     transition: 'all 0.35s ease-in-out',
+    fontSize: '1.6rem',
+    letterSpacing: 1,
     "&:hover": {
       backgroundColor: 'transparent',
       color: '#d83600',
     },
   },
   faIcon: {
-    fontSize: '1.3rem',
-    marginRight: '7px',
+    fontSize: '1.6rem',
+    marginRight: '10px',
   },
 }));

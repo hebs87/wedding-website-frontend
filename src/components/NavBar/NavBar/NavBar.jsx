@@ -21,8 +21,8 @@ const NavBar = () => {
           <NavLink
             exact to="/"
             className={classes.logoLink}>
-            <Typography variant='h3' component='h3'>
-              Sunny &amp; Kim
+            <Typography className={classes.logoText} variant='h3' component='h3'>
+              Kimmy &amp; Sunny
             </Typography>
           </NavLink>
           <div>

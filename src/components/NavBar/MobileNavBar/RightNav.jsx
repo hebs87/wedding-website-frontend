@@ -27,16 +27,18 @@ const Ul = styled.ul`
     width: 300px;
     padding-top: 3.5rem;
     transition: transform 0.3s ease-in-out;
-    li {
+    li a {
       color: #b3b3b3;
       transition: all 0.35s ease-in-out;
+      font-weight: bold;
+      letter-spacing: 1px;
     }
-    li:hover {
+    li a:hover {
       cursor: pointer;
-      color: orange;
+      color: #d83600;
     }
     .nav-link-icon {
-      margin-right: 7px;
+      margin-right: 10px;
     }
   }
 `;

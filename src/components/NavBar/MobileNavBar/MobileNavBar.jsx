@@ -12,12 +12,21 @@ const Nav = styled.nav`
   position: fixed;
   align-items: center;
   color: #b3b3b3;
+  a {
+    text-decoration: none;
+  }
   .logo {
     padding: 15px 0;
   }
   z-index: 999;
   h3 {
     cursor: pointer;
+    font-family: Sacramento, cursive;
+    color: #b3b3b3;
+    font-size: 2.5rem;
+    font-weight: normal;
+    margin-bottom: 0;
+    margin-top: 10px;
   }
 `
 
@@ -28,7 +37,7 @@ const MobileNavBar = () => {
         <NavLink
           exact to="/"
         >
-          <h3>Sunny &amp; Kim</h3>
+          <h3>Kimmy &amp; Sunny</h3>
         </NavLink>
       </div>
       <Burger/>

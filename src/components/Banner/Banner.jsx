@@ -1,12 +1,12 @@
 import React from "react";
-import {useStyles} from './Banner.styles';
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCommentDots} from "@fortawesome/free-solid-svg-icons/faCommentDots";
+import {useStyles} from './Banner.styles';
 
-const Banner = ({imageUrl, title, firstTextLine, secondTextLine, button}) => {
+const Banner = ({imageUrl, heroTitle, title, firstTextLine, secondTextLine, button}) => {
   // Get the classes from the useStyles function
   const classes = useStyles();
 
@@ -21,6 +21,12 @@ const Banner = ({imageUrl, title, firstTextLine, secondTextLine, button}) => {
       className={classes.bannerBgImg}
     >
       <Container className={classes.bannerContainer} maxWidth="lg">
+        {
+          heroTitle &&
+          <Typography className={classes.heroTitle} variant='h3' component='h3'>
+            {heroTitle}
+          </Typography>
+        }
         {
           title &&
           <Typography className={classes.bannerTitle} variant='h3' component='h3'>

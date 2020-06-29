@@ -37,7 +37,7 @@ class WeddingPage extends Component {
       <Fragment>
         <Banner
           imageUrl={OrangeTree}
-          title={'Join Us For Our Sunshine State Wedding'}
+          heroTitle={'Join Us For Our Sunshine State Wedding'}
           firstTextLine={'1 June, 2021'}
           secondTextLine={'Orlando, Florida'}
           button={'RSVP'}

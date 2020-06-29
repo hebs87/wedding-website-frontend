@@ -36,7 +36,7 @@ class Location extends Component {
       <Fragment>
         <Banner
           imageUrl={FloridaSign}
-          title={'Reunion Resort'}
+          heroTitle={'Reunion Resort'}
           firstTextLine={'Orlando, Florida'}
         />
         <Container maxWidth='md'>

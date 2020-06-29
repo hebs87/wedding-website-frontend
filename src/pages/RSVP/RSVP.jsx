@@ -19,7 +19,7 @@ class RSVP extends Component {
       <Fragment>
         <Banner
           imageUrl={WeddingRSVP}
-          title={'RSVP'}
+          heroTitle={'RSVP'}
           firstTextLine={'Please respond by 31 December, 2020'}
         />
         <Container maxWidth='lg'>

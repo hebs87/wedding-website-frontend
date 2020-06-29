@@ -11,16 +11,36 @@ export const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignContent: 'center',
     color: '#b3b3b3',
+    [theme.breakpoints.down(769)]: {
+      paddingTop: 20,
+      paddingBottom: 20,
+    },
+  },
+  heroTitle: {
+    fontFamily: 'Sacramento, cursive',
+    marginBottom: 10,
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '2.5rem',
+    },
+    [theme.breakpoints.down(769)]: {
+      marginTop: 70,
+    },
   },
   bannerTitle: {
     fontFamily: 'Sacramento, cursive',
     marginBottom: 10,
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '2.5rem',
+    },
   },
   bannerText: {
     fontSize: '2rem',
     fontWeight: 'bold',
     fontFamily: 'Amatic SC, cursive',
     letterSpacing: 1,
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1.5rem',
+    },
   },
   bannerBtn: {
     backgroundColor: '#b3b3b3',

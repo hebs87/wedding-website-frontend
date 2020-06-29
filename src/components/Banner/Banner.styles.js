@@ -13,10 +13,14 @@ export const useStyles = makeStyles((theme) => ({
     color: '#b3b3b3',
   },
   bannerTitle: {
-
+    fontFamily: 'Sacramento, cursive',
+    marginBottom: 10,
   },
   bannerText: {
-
+    fontSize: '2rem',
+    fontWeight: 'bold',
+    fontFamily: 'Amatic SC, cursive',
+    letterSpacing: 1,
   },
   bannerBtn: {
     backgroundColor: '#b3b3b3',

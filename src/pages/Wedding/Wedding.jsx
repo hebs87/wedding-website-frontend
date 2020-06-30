@@ -1,4 +1,6 @@
 import React, {Component, Fragment} from "react";
+import {styles} from "./Wedding.styles";
+import {withStyles} from "@material-ui/core";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
@@ -31,6 +33,7 @@ class WeddingPage extends Component {
   }
 
   render() {
+    const {classes} = this.props;
     const {images} = this.state;
 
     return (
@@ -43,8 +46,8 @@ class WeddingPage extends Component {
           button={'RSVP'}
         />
         <Container maxWidth='md' className={classes.contentContainer}>
-          <Typography variant='h3' component='h3'>Our Story</Typography>
-          <Typography variant='p' component='p'>
+          <Typography variant='h3' component='h3' className={classes.heading}>Our Story</Typography>
+          <Typography variant='p' component='p' className={classes.sectionParagraph}>
             Lorem ipsum odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque in
             consectetur a erat nam at lectus urna duis convallis convallis tellus id interdum velit laoreet id donec
             ultrices tincidunt arcu non sodales neque sodales ut etiam sit amet nisl purus in mollis nunc sed id semper
@@ -59,7 +62,7 @@ class WeddingPage extends Component {
           title={'Wedding Day'}
           firstTextLine={'1 June, 2021'}
         />
-        <Container maxWidth='md'>
+        <Container maxWidth='md' className={classes.contentContainer}>
           <Typography variant='p' component='p'>
             Lorem ipsum odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque in
             consectetur a erat nam at lectus urna duis convallis convallis tellus id interdum velit laoreet id donec
@@ -74,7 +77,7 @@ class WeddingPage extends Component {
           title={'A Day At Universal'}
           firstTextLine={'3 June, 2021'}
         />
-        <Container maxWidth='md'>
+        <Container maxWidth='md' className={classes.contentContainer}>
           <Typography variant='p' component='p'>
             Lorem ipsum odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque in
             consectetur a erat nam at lectus urna duis convallis convallis tellus id interdum velit laoreet id donec
@@ -83,13 +86,16 @@ class WeddingPage extends Component {
             fermentum et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor
             aliquam nulla facilisi cras fermentum odio eu feugiat pretium nibh ipsum consequat nisl vel pretium lectus.
           </Typography>
-          <Link href="https://www.attraction-tickets-direct.co.uk/" target="_blank" variant="body2">
-            Attraction Tickets Direct
-          </Link>
+          <div className={classes.linkContainer}>
+            <Link className={classes.link} href="https://www.attraction-tickets-direct.co.uk/" target="_blank"
+                  variant="body2">
+              Attraction Tickets Direct
+            </Link>
+          </div>
         </Container>
       </Fragment>
     )
   }
 }
 
-export default WeddingPage;
+export default withStyles(styles)(WeddingPage);

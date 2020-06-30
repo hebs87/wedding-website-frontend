@@ -42,7 +42,7 @@ class WeddingPage extends Component {
           secondTextLine={'Orlando, Florida'}
           button={'RSVP'}
         />
-        <Container maxWidth='md'>
+        <Container maxWidth='md' className={classes.contentContainer}>
           <Typography variant='h3' component='h3'>Our Story</Typography>
           <Typography variant='p' component='p'>
             Lorem ipsum odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque in
@@ -52,8 +52,8 @@ class WeddingPage extends Component {
             fermentum et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor
             aliquam nulla facilisi cras fermentum odio eu feugiat pretium nibh ipsum consequat nisl vel pretium lectus.
           </Typography>
+          <ImageCarousel images={images}/>
         </Container>
-        <ImageCarousel images={images}/>
         <Banner
           imageUrl={WeddingDay}
           title={'Wedding Day'}

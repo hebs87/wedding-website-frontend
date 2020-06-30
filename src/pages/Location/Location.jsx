@@ -49,8 +49,8 @@ class Location extends Component {
             fermentum et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor
             aliquam nulla facilisi cras fermentum odio eu feugiat pretium nibh ipsum consequat nisl vel pretium lectus.
           </Typography>
+          <ImageCarousel images={images}/>
         </Container>
-        <ImageCarousel images={images}/>
         <Banner
           imageUrl={Orlando}
           title={'Where To Stay'}

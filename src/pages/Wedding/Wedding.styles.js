@@ -1,4 +1,9 @@
 export const styles = theme => ({
+  carouselContentContainer: {
+    marginTop: '5rem',
+    marginBottom: '5rem',
+    minHeight: '48rem',
+  },
   contentContainer: {
     marginTop: '5rem',
     marginBottom: '5rem',

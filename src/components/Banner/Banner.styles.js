@@ -47,11 +47,21 @@ export const useStyles = makeStyles((theme) => ({
     color: '#414141',
     width: '10rem',
     margin: '15px auto',
-    borderRadius: '1.3rem',
+    borderRadius: '1.5rem',
     transition: 'all 0.35s ease-in-out',
+    fontFamily: 'Amatic SC, cursive',
+    fontSize: '1.6rem',
+    fontWeight: 600,
+    padding: 0,
+    height: '2.4rem',
     '&:hover': {
       backgroundColor: '#d83600',
       color: '#b3b3b3',
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1.2rem',
+      height: '2.1rem',
+      width: '8rem',
     },
   },
   faIcon: {

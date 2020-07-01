@@ -7,6 +7,14 @@ export const useStyles = makeStyles((theme) => ({
     position: 'fixed',
     top: 0,
   },
+  rootScrolled: {
+    flexGrow: 1,
+    width: '100%',
+    position: 'fixed',
+    top: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+    zIndex: 100,
+  },
   navBar: {
     backgroundColor: 'transparent',
     boxShadow: 'none',

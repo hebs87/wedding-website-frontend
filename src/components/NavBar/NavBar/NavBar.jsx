@@ -1,4 +1,5 @@
 import React from "react";
+import {useScrollHandler} from "../../../hooks/ScrollHook";
 import {NavLink} from 'react-router-dom';
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -13,9 +14,10 @@ import {faCommentDots} from "@fortawesome/free-solid-svg-icons/faCommentDots";
 const NavBar = () => {
   // Get the classes from the useStyles function
   const classes = useStyles();
+  const scroll = useScrollHandler(15);
 
   return (
-    <div className={classes.root}>
+    <div className={scroll ? classes.root : classes.rootScrolled}>
       <AppBar className={classes.navBar} position="static">
         <Toolbar classes={{root: classes.toolbarRoot}}>
           <NavLink

@@ -7,9 +7,15 @@ export const useStyles = makeStyles((theme) => ({
   },
   heading: {
     fontFamily: 'Sacramento, cursive',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '2.5rem',
+    },
   },
   sectionParagraph: {
     marginTop: '1rem',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1.4rem',
+    },
   },
   formContainer: {
     marginBottom: '5rem',

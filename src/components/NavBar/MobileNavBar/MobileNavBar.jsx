@@ -23,7 +23,7 @@ const Nav = styled.nav`
     cursor: pointer;
     font-family: Sacramento, cursive;
     color: #b3b3b3;
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     font-weight: normal;
     margin-bottom: 0;
     margin-top: 10px;

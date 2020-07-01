@@ -34,6 +34,15 @@ export const useStyles = makeStyles((theme) => ({
   },
   logoText: {
     fontFamily: 'Sacramento, cursive',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '2.5rem',
+    },
+  },
+  navLinkWrapper: {
+    transform: 'translateY(-4px)',
+    [theme.breakpoints.down('sm')]: {
+      transform: 'translateY(-6px)',
+    },
   },
   navLink: {
     margin: '0 2px',
@@ -48,6 +57,9 @@ export const useStyles = makeStyles((theme) => ({
     "&:hover": {
       backgroundColor: 'transparent',
       color: '#d83600',
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1.4rem',
     },
   },
   faIcon: {

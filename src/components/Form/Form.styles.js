@@ -9,7 +9,7 @@ export const styles = theme => ({
     marginRight: 10,
     color: '#b3b3b3',
     fontSize: '1.5rem',
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       transform: 'translateY(-6px)',
       fontSize: '1.2rem',
     },
@@ -39,7 +39,7 @@ export const styles = theme => ({
   },
   input: {
     padding: '4px 0',
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       padding: '1px 0',
     },
   },
@@ -47,7 +47,7 @@ export const styles = theme => ({
     fontFamily: 'Amatic SC, cursive',
     fontSize: '1.8rem',
     color: '#414141',
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       fontSize: '1.4rem',
     },
   },
@@ -67,7 +67,7 @@ export const styles = theme => ({
   },
   selectRoot: {
     paddingBottom: 4,
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       paddingBottom: 1,
     },
   },
@@ -75,7 +75,7 @@ export const styles = theme => ({
     fontFamily: 'Amatic SC, cursive',
     fontSize: '1.8rem',
     color: '#414141',
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       fontSize: '1.4rem',
     },
   },
@@ -89,7 +89,7 @@ export const styles = theme => ({
     marginRight: 10,
     color: '#b3b3b3',
     fontSize: '1.5rem',
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       fontSize: '1.2rem',
     },
   },
@@ -105,7 +105,7 @@ export const styles = theme => ({
     borderBottom: '1px solid rgba(0, 0, 0, 0.42) !important',
     resize: 'none',
     boxSizing: 'border-box',
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       fontSize: '1.4rem',
     },
     '&:hover': {
@@ -134,7 +134,7 @@ export const styles = theme => ({
       backgroundColor: '#d83600',
       color: '#b3b3b3',
     },
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       fontSize: '1.2rem',
     },
   },

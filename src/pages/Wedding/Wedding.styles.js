@@ -10,10 +10,16 @@ export const styles = theme => ({
   },
   heading: {
     fontFamily: 'Sacramento, cursive',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '2.5rem',
+    },
   },
   sectionParagraph: {
     marginTop: '1rem',
     marginBottom: '2rem',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1.4rem',
+    },
   },
   linkContainer: {
     marginTop: '1rem',
@@ -28,6 +34,9 @@ export const styles = theme => ({
     '&:hover': {
       textDecoration: 'none',
       color: '#d83600',
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1.4rem',
     },
   },
 });

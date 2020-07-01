@@ -25,7 +25,7 @@ const NavBar = () => {
               Kimmy &amp; Sunny
             </Typography>
           </NavLink>
-          <div>
+          <div className={classes.navLinkWrapper}>
             <NavLink
               exact to="/"
               className={classes.navLink}

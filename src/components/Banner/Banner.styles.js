@@ -34,12 +34,12 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   bannerText: {
-    fontSize: '2rem',
+    fontSize: '1.8rem',
     fontWeight: 'bold',
     fontFamily: 'Amatic SC, cursive',
     letterSpacing: 1,
     [theme.breakpoints.down('sm')]: {
-      fontSize: '1.5rem',
+      fontSize: '1.4rem',
     },
   },
   bannerBtn: {

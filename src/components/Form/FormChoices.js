@@ -1,5 +1,9 @@
 export const GUESTS = [
   {
+    value: '',
+    label: 'Guest/Group'
+  },
+  {
     value: 'Ash and Saf',
     label: 'Ash and Saf'
   },
@@ -36,8 +40,8 @@ export const GUESTS = [
     label: 'Jack (Best Man)'
   },
   {
-    value: 'Jack, Toni, Archie and Bump',
-    label: 'Jack, Toni, Archie and Bump'
+    value: 'Jack, Toni, Archie and Baba',
+    label: 'Jack, Toni, Archie and Baba'
   },
   {
     value: 'Jimmy and Iris',
@@ -62,10 +66,18 @@ export const GUESTS = [
   {
     value: 'Rach, Ste, Bobby and Sam',
     label: 'Rach, Ste, Bobby and Sam'
-  }
+  },
+  {
+    value: 'Tommy and Denise',
+    label: 'Tommy and Denise'
+  },
 ];
 
 export const ATTENDING_CHOICES = [
+  {
+    value: '',
+    label: 'Can you make it?'
+  },
   {
     value: 'Yes',
     label: 'Yes'

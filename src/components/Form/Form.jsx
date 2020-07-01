@@ -135,11 +135,35 @@ class Form extends Component {
               name="guestGroup"
               select
               label="Guest/Group"
+              InputProps={{
+                classes: {
+                  root: classes.inputRoot,
+                  input: classes.input,
+                }
+              }}
+              InputLabelProps={{
+                classes: {
+                  root: classes.labelRoot,
+                  shrink: classes. labelFilled,
+                  focused: classes.labelFocused,
+                }
+              }}
+              SelectProps={{
+                classes: {
+                  root: classes.selectRoot,
+                }
+              }}
               value={formSelections.guestGroup}
               onChange={(e) => this.handleChange(e)}
             >
               {guests.map(guest => (
-                <MenuItem key={guest.value} value={guest.value}>
+                <MenuItem
+                  classes={{
+                    root: classes.menuRoot,
+                  }}
+                  key={guest.value}
+                  value={guest.value}
+                >
                   {guest.label}
                 </MenuItem>
               ))}
@@ -157,11 +181,35 @@ class Form extends Component {
               name="attending"
               select
               label="Can you make it?"
+              InputProps={{
+                classes: {
+                  root: classes.inputRoot,
+                  input: classes.input,
+                }
+              }}
+              InputLabelProps={{
+                classes: {
+                  root: classes.labelRoot,
+                  shrink: classes.labelFilled,
+                  focused: classes.labelFocused,
+                }
+              }}
+              SelectProps={{
+                classes: {
+                  root: classes.selectRoot,
+                }
+              }}
               value={formSelections.attending}
               onChange={(e) => this.handleChange(e)}
             >
               {attendingChoices.map(choice => (
-                <MenuItem key={choice.value} value={choice.value}>
+                <MenuItem
+                  classes={{
+                    root: classes.menuRoot,
+                  }}
+                  key={choice.value}
+                  value={choice.value}
+                >
                   {choice.label}
                 </MenuItem>
               ))}
@@ -178,6 +226,19 @@ class Form extends Component {
               id="notAttending"
               name="notAttending"
               label="Anyone in your group can't make it?"
+              InputProps={{
+                classes: {
+                  root: classes.inputRoot,
+                  input: classes.input,
+                }
+              }}
+              InputLabelProps={{
+                classes: {
+                  root: classes.labelRoot,
+                  shrink: classes.labelFilled,
+                  focused: classes.labelFocused,
+                }
+              }}
               value={formSelections.notAttending}
               onChange={(e) => this.handleChange(e)}
             />
@@ -189,6 +250,19 @@ class Form extends Component {
               id="song"
               name="song"
               label="Pick a song for our playlist"
+              InputProps={{
+                classes: {
+                  root: classes.inputRoot,
+                  input: classes.input,
+                }
+              }}
+              InputLabelProps={{
+                classes: {
+                  root: classes.labelRoot,
+                  shrink: classes.labelFilled,
+                  focused: classes.labelFocused,
+                }
+              }}
               value={formSelections.song}
               onChange={(e) => this.handleChange(e)}
             />
@@ -204,6 +278,19 @@ class Form extends Component {
               id="drink"
               name="drink"
               label="What's your drink?"
+              InputProps={{
+                classes: {
+                  root: classes.inputRoot,
+                  input: classes.input,
+                }
+              }}
+              InputLabelProps={{
+                classes: {
+                  root: classes.labelRoot,
+                  shrink: classes.labelFilled,
+                  focused: classes.labelFocused,
+                }
+              }}
               value={formSelections.drink}
               onChange={(e) => this.handleChange(e)}
             />
@@ -219,6 +306,19 @@ class Form extends Component {
               id="dietaryRequirements"
               name="dietaryRequirements"
               label="Any dietary requirements"
+              InputProps={{
+                classes: {
+                  root: classes.inputRoot,
+                  input: classes.input,
+                }
+              }}
+              InputLabelProps={{
+                classes: {
+                  root: classes.labelRoot,
+                  shrink: classes.labelFilled,
+                  focused: classes.labelFocused,
+                }
+              }}
               value={formSelections.dietaryRequirements}
               onChange={(e) => this.handleChange(e)}
             />
@@ -229,7 +329,7 @@ class Form extends Component {
               className={classes.textAreaField}
               id="additionalInfo"
               name="additionalInfo"
-              rowsMin={3}
+              rowsMin={1}
               placeholder="Anything else we need to know?"
               value={formSelections.additionalInfo}
               onChange={(e) => this.handleChange(e)}

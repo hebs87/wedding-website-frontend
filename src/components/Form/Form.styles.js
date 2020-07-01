@@ -8,26 +8,113 @@ export const styles = theme => ({
     transform: 'translateY(-7px)',
     marginRight: 10,
     color: '#b3b3b3',
-    fontSize: 20,
+    fontSize: '1.5rem',
+    [theme.breakpoints.down('xs')]: {
+      transform: 'translateY(-6px)',
+      fontSize: '1.2rem',
+    },
   },
   formField: {
     width: '100%',
     textAlign: 'left',
+    fontFamily: 'Amatic SC, cursive',
+    fontSize: '1.8rem',
+    color: '#414141',
+  },
+  inputRoot: {
+    fontFamily: 'Amatic SC, cursive',
+    fontSize: '1.8rem',
+    color: '#414141',
+    '&:hover': {
+      '&:before': {
+        borderBottom: '2px solid rgba(0, 0, 0, 0.42) !important',
+      },
+    },
+    '&:focus': {
+      outline: 'none',
+    },
+    '&:after': {
+      borderBottom: '2px solid rgba(0, 0, 0, 0.42) !important',
+    },
+  },
+  input: {
+    padding: '4px 0',
+    [theme.breakpoints.down('xs')]: {
+      padding: '1px 0',
+    },
+  },
+  labelRoot: {
+    fontFamily: 'Amatic SC, cursive',
+    fontSize: '1.8rem',
+    color: '#414141',
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '1.4rem',
+    },
+  },
+  labelFilled: {
+    fontSize: '1.2rem',
+    color: '#414141',
+    '&:focus': {
+      color: '#414141',
+    },
+  },
+  labelFocused: {
+    fontSize: '1.2rem',
+    color: '#414141',
+    '&:focus': {
+      color: '#414141',
+    },
+  },
+  selectRoot: {
+    paddingBottom: 4,
+    [theme.breakpoints.down('xs')]: {
+      paddingBottom: 1,
+    },
+  },
+  menuRoot: {
+    fontFamily: 'Amatic SC, cursive',
+    fontSize: '1.8rem',
+    color: '#414141',
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '1.4rem',
+    },
   },
   textAreaControl: {
     display: 'flex',
     position: 'relative',
     alignItems: 'center',
+    marginTop: 20,
   },
   textAreaIcon: {
     marginRight: 10,
     color: '#b3b3b3',
-    fontSize: 20,
+    fontSize: '1.5rem',
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '1.2rem',
+    },
   },
   textAreaField: {
     width: '100%',
-    fontSize: 16,
+    fontSize: '1.8rem',
     textAlign: 'left',
+    fontFamily: 'Amatic SC, cursive',
+    color: '#414141',
+    borderTop: 'unset',
+    borderLeft: 'unset',
+    borderRight: 'unset',
+    borderBottom: '1px solid rgba(0, 0, 0, 0.42) !important',
+    resize: 'none',
+    boxSizing: 'border-box',
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '1.4rem',
+    },
+    '&:hover': {
+        borderBottom: '2px solid rgba(0, 0, 0, 0.42) !important',
+    },
+    '&:focus': {
+      outline: 'none',
+      borderBottom: '2px solid rgba(0, 0, 0, 0.42) !important',
+    },
   },
   btnControl: {
     display: 'flex',
@@ -38,11 +125,17 @@ export const styles = theme => ({
     color: '#414141',
     width: '10rem',
     margin: '0 15px',
-    borderRadius: '1.3rem',
+    borderRadius: '1.5rem',
     transition: 'all 0.35s ease-in-out',
+    fontFamily: 'Amatic SC, cursive',
+    fontSize: '1.6rem',
+    padding: 0,
     '&:hover': {
       backgroundColor: '#d83600',
       color: '#b3b3b3',
+    },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '1.2rem',
     },
   },
   faIcon: {

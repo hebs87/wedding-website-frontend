@@ -1,11 +1,11 @@
 .carousel{
   width: 70vw;
   margin: 0 auto;
+  min-height: 71vw;
 }
 
 .image {
   width: 70vw;
-  height: auto;
   -webkit-box-shadow: -9px 16px 40px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: -9px 16px 40px rgba(0, 0, 0, 0.4);
   box-shadow: -9px 16px 40px rgba(0, 0, 0, 0.4);
@@ -15,6 +15,7 @@
 @media only screen and (min-width: 600px) {
   .carousel {
     width: 50vw;
+    min-height: 51vw;
   }
 
   .image {
@@ -25,6 +26,7 @@
 @media only screen and (min-width: 1280px) {
   .carousel {
     width: 35vw;
+    min-height: 36vw;
   }
 
   .image {
@@ -35,6 +37,7 @@
 @media only screen and (min-width: 1550px) {
   .carousel {
     width: 30vw;
+    min-height: 31vw;
   }
 
   .image {

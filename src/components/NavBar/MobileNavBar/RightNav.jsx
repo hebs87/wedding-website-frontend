@@ -43,13 +43,14 @@ const Ul = styled.ul`
   }
 `;
 
-const RightNav = ({open}) => {
+const RightNav = ({open, setOpen}) => {
   return (
     <Ul open={open}>
       <li>
         <NavLink
           exact to="/"
           activeStyle={{opacity: 1}}
+          onClick={() => setOpen(!open)}
         >
           <FontAwesomeIcon className='nav-link-icon' icon={faRing}/>
           Wedding
@@ -59,6 +60,7 @@ const RightNav = ({open}) => {
         <NavLink
           exact to="/location"
           activeStyle={{opacity: 1}}
+          onClick={() => setOpen(!open)}
         >
           <FontAwesomeIcon className='nav-link-icon' icon={faMapMarkedAlt}/>
           Location
@@ -68,6 +70,7 @@ const RightNav = ({open}) => {
         <NavLink
           exact to="/rsvp"
           activeStyle={{opacity: 1}}
+          onClick={() => setOpen(!open)}
         >
           <FontAwesomeIcon className='nav-link-icon' icon={faCommentDots}/>
           RSVP

@@ -55,7 +55,7 @@ class WeddingPage extends Component {
             fermentum et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor
             aliquam nulla facilisi cras fermentum odio eu feugiat pretium nibh ipsum consequat nisl vel pretium lectus.
           </Typography>
-          <ImageCarousel images={images}/>
+          <ImageCarousel images={images} home/>
         </Container>
         <Banner
           imageUrl={WeddingDay}

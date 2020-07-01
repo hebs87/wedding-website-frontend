@@ -2,11 +2,11 @@ import React, {Fragment} from 'react';
 import Carousel from 'react-material-ui-carousel';
 import './ImageCarousel.styles.css';
 
-const ImageCarousel = ({images}) => {
+const ImageCarousel = ({images, home}) => {
     return (
       <Fragment>
         <Carousel
-          className="carousel"
+          className={home ? 'home-carousel' : 'villa-carousel'}
           autoPlay={true}
           interval={3000}
           animation='fade'

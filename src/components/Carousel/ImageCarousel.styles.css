@@ -1,7 +1,13 @@
-.carousel{
+.home-carousel{
   width: 70vw;
   margin: 0 auto;
   min-height: 71vw;
+}
+
+.villa-carousel{
+  width: 70vw;
+  margin: 0 auto;
+  min-height: 48vw;
 }
 
 .image {
@@ -13,9 +19,14 @@
 }
 
 @media only screen and (min-width: 600px) {
-  .carousel {
+  .home-carousel {
     width: 50vw;
     min-height: 51vw;
+  }
+
+  .villa-carousel {
+    width: 50vw;
+    min-height: 34vw;
   }
 
   .image {
@@ -24,9 +35,14 @@
 }
 
 @media only screen and (min-width: 1280px) {
-  .carousel {
+  .home-carousel {
     width: 35vw;
     min-height: 36vw;
+  }
+
+  .villa-carousel {
+    width: 35vw;
+    min-height: 24vw;
   }
 
   .image {
@@ -35,9 +51,14 @@
 }
 
 @media only screen and (min-width: 1550px) {
-  .carousel {
+  .home-carousel {
     width: 30vw;
     min-height: 31vw;
+  }
+
+  .villa-carousel {
+    width: 30vw;
+    min-height: 21vw;
   }
 
   .image {

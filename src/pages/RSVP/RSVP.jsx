@@ -1,4 +1,4 @@
-import React, {Fragment} from "react";
+import React, {Fragment, useEffect} from "react";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Banner from "../../components/Banner/Banner";
@@ -8,6 +8,8 @@ import {useStyles} from "./RSVP.styles";
 
 const RSVP = () => {
   const classes = useStyles();
+
+  useEffect(() => window.scrollTo(0, 0), []);
 
   return (
     <Fragment>

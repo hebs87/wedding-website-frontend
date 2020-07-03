@@ -23,6 +23,7 @@ class WeddingPage extends Component {
 
   componentDidMount() {
     this.fetchImageData();
+    window.scrollTo(0, 0);
   }
 
   fetchImageData = () => {

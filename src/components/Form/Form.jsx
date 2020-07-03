@@ -170,7 +170,9 @@ class Form extends Component {
             </TextField>
             {
               guestGroupHasError &&
-              <FormHelperText>Please choose an option!</FormHelperText>
+              <FormHelperText className={`${classes.errorMessage} ${classes.optionError}`}>
+                Please choose an option!
+              </FormHelperText>
             }
           </Grid>
           <Grid item xs={12} md={6} className={classes.formControl}>
@@ -216,7 +218,7 @@ class Form extends Component {
             </TextField>
             {
               attendingHasError &&
-              <FormHelperText>Please choose an option!</FormHelperText>
+              <FormHelperText className={classes.errorMessage}>Please choose an option!</FormHelperText>
             }
           </Grid>
           <Grid item xs={12} md={6} className={classes.formControl}>
@@ -268,7 +270,7 @@ class Form extends Component {
             />
             {
               songHasError &&
-              <FormHelperText>Please pick a song!</FormHelperText>
+              <FormHelperText className={classes.errorMessage}>Please pick a song!</FormHelperText>
             }
           </Grid>
           <Grid item xs={12} md={6} className={classes.formControl}>
@@ -296,7 +298,7 @@ class Form extends Component {
             />
             {
               drinkHasError &&
-              <FormHelperText>Please pick a drink!</FormHelperText>
+              <FormHelperText className={classes.errorMessage}>Please pick a drink!</FormHelperText>
             }
           </Grid>
           <Grid item xs={12} md={6} className={classes.formControl}>

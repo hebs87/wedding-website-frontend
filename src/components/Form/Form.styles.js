@@ -146,5 +146,18 @@ export const styles = theme => ({
     fontSize: '1.3rem',
     marginLeft: '7px',
   },
-
+  errorMessage: {
+    position: 'absolute',
+    transform: 'translate(34px, 17px)',
+    color: '#d83600',
+    [theme.breakpoints.down('sm')]: {
+      transform: 'translate(29px, 17px)',
+    },
+  },
+  optionError: {
+    transform: 'translate(40px, 17px)',
+    [theme.breakpoints.down('sm')]: {
+      transform: 'translate(34px, 17px)',
+    },
+  },
 });

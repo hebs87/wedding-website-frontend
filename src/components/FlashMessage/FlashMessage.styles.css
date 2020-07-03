@@ -1,0 +1,40 @@
+.flash-message {
+  visibility: hidden;
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  position: fixed;
+  z-index: 1000;
+  top: 5.5rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #b3b3b3;
+  font-size: 1.8rem;
+}
+
+.flash-message.show {
+  visibility: visible;
+  animation: flashMessageShow 0.5s, flashMessageHide 0.5s 3.5s;
+}
+
+/* KEYFRAMES */
+@keyframes flashMessageShow {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 5rem;
+    opacity: 1;
+  }
+}
+
+@keyframes flashMessageHide {
+  from {
+    top: 5rem;
+    opacity: 1;
+  }
+  to {
+    top: 0;
+    opacity: 0;
+  }
+}

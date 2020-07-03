@@ -8,6 +8,7 @@ import Banner from "../../components/Banner/Banner";
 import ImageCarousel from "../../components/Carousel/ImageCarousel";
 import FloridaSign from "../../static/assets/florida-sign.jpg";
 import Orlando from "../../static/assets/orlando.jpg";
+import Spinner from "../../components/Spinner/Spinner";
 
 class Location extends Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class Location extends Component {
 
     this.state = {
       images: [],
+      loading: true,
     }
   }
 
@@ -27,13 +29,13 @@ class Location extends Component {
       method: 'GET'
     })
       .then(res => res.json())
-      .then(images => this.setState({images: images}))
+      .then(images => this.setState({images, loading: false}))
       .catch(err => console.log(err));
   }
 
   render() {
     const {classes} = this.props;
-    const {images} = this.state;
+    const {images, loading} = this.state;
 
     return (
       <Fragment>
@@ -52,7 +54,14 @@ class Location extends Component {
             fermentum et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor
             aliquam nulla facilisi cras fermentum odio eu feugiat pretium nibh ipsum consequat nisl vel pretium lectus.
           </Typography>
-          <ImageCarousel images={images}/>
+          {
+            loading &&
+            <Spinner/>
+          }
+          {
+            !loading &&
+            <ImageCarousel images={images}/>
+          }
         </Container>
         <Banner
           imageUrl={Orlando}

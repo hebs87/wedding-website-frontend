@@ -6,6 +6,7 @@ import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
 import Banner from "../../components/Banner/Banner";
 import ImageCarousel from "../../components/Carousel/ImageCarousel";
+import Spinner from "../../components/Spinner/Spinner";
 import OrangeTree from "../../static/assets/orange-tree.jpg";
 import WeddingDay from "../../static/assets/wedding-day.jpg";
 import UniversalStudios from "../../static/assets/universal-studios.jpg";
@@ -16,6 +17,7 @@ class WeddingPage extends Component {
 
     this.state = {
       images: [],
+      loading: true,
     }
   }
 
@@ -28,13 +30,13 @@ class WeddingPage extends Component {
       method: 'GET'
     })
       .then(res => res.json())
-      .then(images => this.setState({images: images}))
+      .then(images => this.setState({images, loading: false}))
       .catch(err => console.log(err));
   }
 
   render() {
     const {classes} = this.props;
-    const {images} = this.state;
+    const {images, loading} = this.state;
 
     return (
       <Fragment>
@@ -55,7 +57,14 @@ class WeddingPage extends Component {
             fermentum et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor
             aliquam nulla facilisi cras fermentum odio eu feugiat pretium nibh ipsum consequat nisl vel pretium lectus.
           </Typography>
-          <ImageCarousel images={images} home/>
+          {
+            loading &&
+            <Spinner/>
+          }
+          {
+            !loading &&
+            <ImageCarousel images={images} home/>
+          }
         </Container>
         <Banner
           imageUrl={WeddingDay}

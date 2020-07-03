@@ -20,7 +20,7 @@ export const useScrollHandler = (distance) => {
     return () => {
       document.removeEventListener("scroll", onScroll)
     }
-  }, [scroll, setScroll])
+  }, [distance, scroll, setScroll])
 
   return scroll
 }

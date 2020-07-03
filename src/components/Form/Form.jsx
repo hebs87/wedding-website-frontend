@@ -144,7 +144,7 @@ class Form extends Component {
               InputLabelProps={{
                 classes: {
                   root: classes.labelRoot,
-                  shrink: classes. labelFilled,
+                  shrink: classes.labelFilled,
                   focused: classes.labelFocused,
                 }
               }}

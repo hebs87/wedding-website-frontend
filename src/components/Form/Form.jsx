@@ -78,13 +78,18 @@ class Form extends Component {
           window.location.href = '/'
         }, 4000);
       })
-      .catch(err => console.log(err));
+      .catch(err => this.setErrorPropStates());
   }
 
   setPropStates = (formSelections) => {
     this.props.setAttending(formSelections.attending === 'Yes');
     this.props.setShowFlashMessage(true);
     this.setState({submitted: true});
+  }
+
+  setErrorPropStates = () => {
+    this.props.setSubmissionError(true);
+    this.props.setShowFlashMessage(true);
   }
 
   submitForm = event => {

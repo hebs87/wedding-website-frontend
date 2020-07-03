@@ -12,6 +12,7 @@ const RSVP = () => {
   const classes = useStyles();
   const [showFlashMessage, setShowFlashMessage] = useState(false);
   const [attending, setAttending] = useState(false);
+  const [submissionError, setSubmissionError] = useState(false);
 
   useEffect(() => window.scrollTo(0, 0), []);
 
@@ -21,7 +22,9 @@ const RSVP = () => {
         showFlashMessage &&
         <FlashMessage
           attending={attending}
-          setShowFlashMessage={setShowFlashMessage}/>
+          submissionError={submissionError}
+          setShowFlashMessage={setShowFlashMessage}
+        />
       }
       <Banner
         imageUrl={WeddingRSVP}
@@ -41,7 +44,11 @@ const RSVP = () => {
           </Typography>
         </Container>
         <Container maxWidth='md' className={classes.formContainer}>
-          <Form setShowFlashMessage={setShowFlashMessage} setAttending={setAttending}/>
+          <Form
+            setShowFlashMessage={setShowFlashMessage}
+            setAttending={setAttending}
+            setSubmissionError={setSubmissionError}
+          />
         </Container>
       </Fade>
     </Fragment>

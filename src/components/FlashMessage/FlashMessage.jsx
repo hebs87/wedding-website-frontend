@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 import './FlashMessage.styles.css'
-const FlashMessage = ({setShowFlashMessage, attending}) => {
+
+const FlashMessage = ({setShowFlashMessage, attending, submissionError}) => {
 
   const showFlashMessage = () => {
     let flashMessage = document.getElementById('flash_message');
@@ -20,12 +21,16 @@ const FlashMessage = ({setShowFlashMessage, attending}) => {
     <div id="flash_message" className="flash-message">
       <span>
         {
-          attending &&
+          attending && !submissionError &&
           "Great, see you there :)"
         }
         {
-          !attending &&
+          !attending && !submissionError &&
           "Sorry you can't make it :("
+        }
+        {
+          submissionError &&
+          "Ooops, something went wrong. Please try again!"
         }
       </span>
     </div>

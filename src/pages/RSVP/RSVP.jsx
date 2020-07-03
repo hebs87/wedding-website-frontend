@@ -6,7 +6,7 @@ import WeddingRSVP from "../../static/assets/wedding-rsvp.jpg";
 import Form from "../../components/Form/Form";
 import {useStyles} from "./RSVP.styles";
 
-const RSVP = () => {
+const RSVP = ({setShowFlashMessage, setAttending}) => {
   const classes = useStyles();
 
   useEffect(() => window.scrollTo(0, 0), []);
@@ -30,7 +30,7 @@ const RSVP = () => {
         </Typography>
       </Container>
       <Container maxWidth='md' className={classes.formContainer}>
-        <Form/>
+        <Form setShowFlashMessage={setShowFlashMessage} setAttending={setAttending}/>
       </Container>
     </Fragment>
   )

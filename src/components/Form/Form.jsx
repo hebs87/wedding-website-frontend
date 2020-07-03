@@ -1,5 +1,5 @@
 import {styles} from './Form.styles';
-import React, {Component} from "react";
+import React, {Component, Fragment} from "react";
 import {withStyles} from '@material-ui/core/styles';
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
@@ -16,6 +16,7 @@ import {faCheese} from "@fortawesome/free-solid-svg-icons/faCheese";
 import {faComment} from "@fortawesome/free-solid-svg-icons/faComment";
 import MenuItem from "@material-ui/core/MenuItem";
 import {GUESTS, ATTENDING_CHOICES} from "./FormChoices";
+import Spinner from "../Spinner/Spinner";
 
 class Form extends Component {
   constructor(props) {
@@ -37,6 +38,7 @@ class Form extends Component {
       attendingHasError: false,
       songHasError: false,
       drinkHasError: false,
+      submitted: false,
     };
   }
 
@@ -70,9 +72,19 @@ class Form extends Component {
       })
     })
       .then(res => res.json())
-      .then(() => alert('Thanks for your reply!'))
-      .then(() => window.location.href = '/')
+      .then(() => this.setPropStates(formSelections))
+      .then(() => {
+        setTimeout(function () {
+          window.location.href = '/'
+        }, 3000);
+      })
       .catch(err => console.log(err));
+  }
+
+  setPropStates = (formSelections) => {
+    this.props.setAttending(formSelections.attending === 'Yes');
+    this.props.setShowFlashMessage(true);
+    this.setState({submitted: true});
   }
 
   submitForm = event => {
@@ -121,232 +133,241 @@ class Form extends Component {
     const {classes} = this.props;
     const {
       guests, attendingChoices, formSelections, guestGroupHasError, attendingHasError,
-      songHasError, drinkHasError
+      songHasError, drinkHasError, submitted
     } = this.state;
 
     return (
       <div>
         <Grid container spacing={3}>
-          <Grid item xs={12} md={6} className={classes.formControl}>
-            <FontAwesomeIcon icon={faUsers} className={classes.formIcon}/>
-            <TextField
-              className={classes.formField}
-              id="guestGroup"
-              name="guestGroup"
-              select
-              label="Guest/Group"
-              InputProps={{
-                classes: {
-                  root: classes.inputRoot,
-                  input: classes.input,
-                }
-              }}
-              InputLabelProps={{
-                classes: {
-                  root: classes.labelRoot,
-                  shrink: classes.labelFilled,
-                  focused: classes.labelFocused,
-                }
-              }}
-              SelectProps={{
-                classes: {
-                  root: classes.selectRoot,
-                }
-              }}
-              value={formSelections.guestGroup}
-              onChange={(e) => this.handleChange(e)}
-            >
-              {guests.map(guest => (
-                <MenuItem
-                  classes={{
-                    root: classes.menuRoot,
+          {
+            submitted &&
+            <Spinner/>
+          }
+          {
+            !submitted &&
+            <Fragment>
+              <Grid item xs={12} md={6} className={classes.formControl}>
+                <FontAwesomeIcon icon={faUsers} className={classes.formIcon}/>
+                <TextField
+                  className={classes.formField}
+                  id="guestGroup"
+                  name="guestGroup"
+                  select
+                  label="Guest/Group"
+                  InputProps={{
+                    classes: {
+                      root: classes.inputRoot,
+                      input: classes.input,
+                    }
                   }}
-                  key={guest.value}
-                  value={guest.value}
-                >
-                  {guest.label}
-                </MenuItem>
-              ))}
-            </TextField>
-            {
-              guestGroupHasError &&
-              <FormHelperText className={`${classes.errorMessage} ${classes.optionError}`}>
-                Please choose an option!
-              </FormHelperText>
-            }
-          </Grid>
-          <Grid item xs={12} md={6} className={classes.formControl}>
-            <FontAwesomeIcon icon={faCheckCircle} className={classes.formIcon}/>
-            <TextField
-              className={classes.formField}
-              id="attending"
-              name="attending"
-              select
-              label="Can you make it?"
-              InputProps={{
-                classes: {
-                  root: classes.inputRoot,
-                  input: classes.input,
-                }
-              }}
-              InputLabelProps={{
-                classes: {
-                  root: classes.labelRoot,
-                  shrink: classes.labelFilled,
-                  focused: classes.labelFocused,
-                }
-              }}
-              SelectProps={{
-                classes: {
-                  root: classes.selectRoot,
-                }
-              }}
-              value={formSelections.attending}
-              onChange={(e) => this.handleChange(e)}
-            >
-              {attendingChoices.map(choice => (
-                <MenuItem
-                  classes={{
-                    root: classes.menuRoot,
+                  InputLabelProps={{
+                    classes: {
+                      root: classes.labelRoot,
+                      shrink: classes.labelFilled,
+                      focused: classes.labelFocused,
+                    }
                   }}
-                  key={choice.value}
-                  value={choice.value}
+                  SelectProps={{
+                    classes: {
+                      root: classes.selectRoot,
+                    }
+                  }}
+                  value={formSelections.guestGroup}
+                  onChange={(e) => this.handleChange(e)}
                 >
-                  {choice.label}
-                </MenuItem>
-              ))}
-            </TextField>
-            {
-              attendingHasError &&
-              <FormHelperText className={classes.errorMessage}>Please choose an option!</FormHelperText>
-            }
-          </Grid>
-          <Grid item xs={12} md={6} className={classes.formControl}>
-            <FontAwesomeIcon icon={faTimesCircle} className={classes.formIcon}/>
-            <TextField
-              className={classes.formField}
-              id="notAttending"
-              name="notAttending"
-              label="Anyone in your group can't make it?"
-              InputProps={{
-                classes: {
-                  root: classes.inputRoot,
-                  input: classes.input,
+                  {guests.map(guest => (
+                    <MenuItem
+                      classes={{
+                        root: classes.menuRoot,
+                      }}
+                      key={guest.value}
+                      value={guest.value}
+                    >
+                      {guest.label}
+                    </MenuItem>
+                  ))}
+                </TextField>
+                {
+                  guestGroupHasError &&
+                  <FormHelperText className={`${classes.errorMessage} ${classes.optionError}`}>
+                    Please choose an option!
+                  </FormHelperText>
                 }
-              }}
-              InputLabelProps={{
-                classes: {
-                  root: classes.labelRoot,
-                  shrink: classes.labelFilled,
-                  focused: classes.labelFocused,
+              </Grid>
+              <Grid item xs={12} md={6} className={classes.formControl}>
+                <FontAwesomeIcon icon={faCheckCircle} className={classes.formIcon}/>
+                <TextField
+                  className={classes.formField}
+                  id="attending"
+                  name="attending"
+                  select
+                  label="Can you make it?"
+                  InputProps={{
+                    classes: {
+                      root: classes.inputRoot,
+                      input: classes.input,
+                    }
+                  }}
+                  InputLabelProps={{
+                    classes: {
+                      root: classes.labelRoot,
+                      shrink: classes.labelFilled,
+                      focused: classes.labelFocused,
+                    }
+                  }}
+                  SelectProps={{
+                    classes: {
+                      root: classes.selectRoot,
+                    }
+                  }}
+                  value={formSelections.attending}
+                  onChange={(e) => this.handleChange(e)}
+                >
+                  {attendingChoices.map(choice => (
+                    <MenuItem
+                      classes={{
+                        root: classes.menuRoot,
+                      }}
+                      key={choice.value}
+                      value={choice.value}
+                    >
+                      {choice.label}
+                    </MenuItem>
+                  ))}
+                </TextField>
+                {
+                  attendingHasError &&
+                  <FormHelperText className={classes.errorMessage}>Please choose an option!</FormHelperText>
                 }
-              }}
-              value={formSelections.notAttending}
-              onChange={(e) => this.handleChange(e)}
-            />
-          </Grid>
-          <Grid item xs={12} md={6} className={classes.formControl}>
-            <FontAwesomeIcon icon={faMusic} className={classes.formIcon}/>
-            <TextField
-              className={classes.formField}
-              id="song"
-              name="song"
-              label="Pick a song for our playlist"
-              InputProps={{
-                classes: {
-                  root: classes.inputRoot,
-                  input: classes.input,
+              </Grid>
+              <Grid item xs={12} md={6} className={classes.formControl}>
+                <FontAwesomeIcon icon={faTimesCircle} className={classes.formIcon}/>
+                <TextField
+                  className={classes.formField}
+                  id="notAttending"
+                  name="notAttending"
+                  label="Anyone in your group can't make it?"
+                  InputProps={{
+                    classes: {
+                      root: classes.inputRoot,
+                      input: classes.input,
+                    }
+                  }}
+                  InputLabelProps={{
+                    classes: {
+                      root: classes.labelRoot,
+                      shrink: classes.labelFilled,
+                      focused: classes.labelFocused,
+                    }
+                  }}
+                  value={formSelections.notAttending}
+                  onChange={(e) => this.handleChange(e)}
+                />
+              </Grid>
+              <Grid item xs={12} md={6} className={classes.formControl}>
+                <FontAwesomeIcon icon={faMusic} className={classes.formIcon}/>
+                <TextField
+                  className={classes.formField}
+                  id="song"
+                  name="song"
+                  label="Pick a song for our playlist"
+                  InputProps={{
+                    classes: {
+                      root: classes.inputRoot,
+                      input: classes.input,
+                    }
+                  }}
+                  InputLabelProps={{
+                    classes: {
+                      root: classes.labelRoot,
+                      shrink: classes.labelFilled,
+                      focused: classes.labelFocused,
+                    }
+                  }}
+                  value={formSelections.song}
+                  onChange={(e) => this.handleChange(e)}
+                />
+                {
+                  songHasError &&
+                  <FormHelperText className={classes.errorMessage}>Please pick a song!</FormHelperText>
                 }
-              }}
-              InputLabelProps={{
-                classes: {
-                  root: classes.labelRoot,
-                  shrink: classes.labelFilled,
-                  focused: classes.labelFocused,
+              </Grid>
+              <Grid item xs={12} md={6} className={classes.formControl}>
+                <FontAwesomeIcon icon={faGlassMartiniAlt} className={classes.formIcon}/>
+                <TextField
+                  className={classes.formField}
+                  id="drink"
+                  name="drink"
+                  label="What's your drink?"
+                  InputProps={{
+                    classes: {
+                      root: classes.inputRoot,
+                      input: classes.input,
+                    }
+                  }}
+                  InputLabelProps={{
+                    classes: {
+                      root: classes.labelRoot,
+                      shrink: classes.labelFilled,
+                      focused: classes.labelFocused,
+                    }
+                  }}
+                  value={formSelections.drink}
+                  onChange={(e) => this.handleChange(e)}
+                />
+                {
+                  drinkHasError &&
+                  <FormHelperText className={classes.errorMessage}>Please pick a drink!</FormHelperText>
                 }
-              }}
-              value={formSelections.song}
-              onChange={(e) => this.handleChange(e)}
-            />
-            {
-              songHasError &&
-              <FormHelperText className={classes.errorMessage}>Please pick a song!</FormHelperText>
-            }
-          </Grid>
-          <Grid item xs={12} md={6} className={classes.formControl}>
-            <FontAwesomeIcon icon={faGlassMartiniAlt} className={classes.formIcon}/>
-            <TextField
-              className={classes.formField}
-              id="drink"
-              name="drink"
-              label="What's your drink?"
-              InputProps={{
-                classes: {
-                  root: classes.inputRoot,
-                  input: classes.input,
-                }
-              }}
-              InputLabelProps={{
-                classes: {
-                  root: classes.labelRoot,
-                  shrink: classes.labelFilled,
-                  focused: classes.labelFocused,
-                }
-              }}
-              value={formSelections.drink}
-              onChange={(e) => this.handleChange(e)}
-            />
-            {
-              drinkHasError &&
-              <FormHelperText className={classes.errorMessage}>Please pick a drink!</FormHelperText>
-            }
-          </Grid>
-          <Grid item xs={12} md={6} className={classes.formControl}>
-            <FontAwesomeIcon icon={faCheese} className={classes.formIcon}/>
-            <TextField
-              className={classes.formField}
-              id="dietaryRequirements"
-              name="dietaryRequirements"
-              label="Any dietary requirements"
-              InputProps={{
-                classes: {
-                  root: classes.inputRoot,
-                  input: classes.input,
-                }
-              }}
-              InputLabelProps={{
-                classes: {
-                  root: classes.labelRoot,
-                  shrink: classes.labelFilled,
-                  focused: classes.labelFocused,
-                }
-              }}
-              value={formSelections.dietaryRequirements}
-              onChange={(e) => this.handleChange(e)}
-            />
-          </Grid>
-          <Grid item xs={12} className={classes.textAreaControl}>
-            <FontAwesomeIcon icon={faComment} className={classes.textAreaIcon}/>
-            <TextareaAutosize
-              className={classes.textAreaField}
-              id="additionalInfo"
-              name="additionalInfo"
-              rowsMin={1}
-              placeholder="Anything else we need to know?"
-              value={formSelections.additionalInfo}
-              onChange={(e) => this.handleChange(e)}
-            />
-          </Grid>
-          <Grid item xs={12} className={classes.btnControl}>
-            <Button className={classes.formBtn} onClick={this.submitForm}>
-              Submit
-              <FontAwesomeIcon className={classes.faIcon} icon={faCheckCircle}/>
-            </Button>
-            <Button className={classes.formBtn} onClick={this.resetForm}>
-              Reset
-              <FontAwesomeIcon className={classes.faIcon} icon={faTimesCircle}/>
-            </Button>
-          </Grid>
+              </Grid>
+              <Grid item xs={12} md={6} className={classes.formControl}>
+                <FontAwesomeIcon icon={faCheese} className={classes.formIcon}/>
+                <TextField
+                  className={classes.formField}
+                  id="dietaryRequirements"
+                  name="dietaryRequirements"
+                  label="Any dietary requirements"
+                  InputProps={{
+                    classes: {
+                      root: classes.inputRoot,
+                      input: classes.input,
+                    }
+                  }}
+                  InputLabelProps={{
+                    classes: {
+                      root: classes.labelRoot,
+                      shrink: classes.labelFilled,
+                      focused: classes.labelFocused,
+                    }
+                  }}
+                  value={formSelections.dietaryRequirements}
+                  onChange={(e) => this.handleChange(e)}
+                />
+              </Grid>
+              <Grid item xs={12} className={classes.textAreaControl}>
+                <FontAwesomeIcon icon={faComment} className={classes.textAreaIcon}/>
+                <TextareaAutosize
+                  className={classes.textAreaField}
+                  id="additionalInfo"
+                  name="additionalInfo"
+                  rowsMin={1}
+                  placeholder="Anything else we need to know?"
+                  value={formSelections.additionalInfo}
+                  onChange={(e) => this.handleChange(e)}
+                />
+              </Grid>
+              <Grid item xs={12} className={classes.btnControl}>
+                <Button className={classes.formBtn} onClick={this.submitForm}>
+                  Submit
+                  <FontAwesomeIcon className={classes.faIcon} icon={faCheckCircle}/>
+                </Button>
+                <Button className={classes.formBtn} onClick={this.resetForm}>
+                  Reset
+                  <FontAwesomeIcon className={classes.faIcon} icon={faTimesCircle}/>
+                </Button>
+              </Grid>
+            </Fragment>
+          }
         </Grid>
       </div>
     )

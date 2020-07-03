@@ -10,7 +10,7 @@ const FlashMessage = ({setShowFlashMessage, attending}) => {
     setTimeout(function () {
       flashMessage.className.replace(/\bshow\b/g, "");
       setShowFlashMessage(false);
-    }, 3000);
+    }, 4000);
   }
 
   // Trigger showFlashMessage on render

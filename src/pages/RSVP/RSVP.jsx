@@ -1,18 +1,27 @@
-import React, {Fragment, useEffect} from "react";
+import React, {Fragment, useState, useEffect} from "react";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
+import FlashMessage from "../../components/FlashMessage/FlashMessage";
 import Banner from "../../components/Banner/Banner";
 import WeddingRSVP from "../../static/assets/wedding-rsvp.jpg";
 import Form from "../../components/Form/Form";
 import {useStyles} from "./RSVP.styles";
 
-const RSVP = ({setShowFlashMessage, setAttending}) => {
+const RSVP = () => {
   const classes = useStyles();
+  const [showFlashMessage, setShowFlashMessage] = useState(false);
+  const [attending, setAttending] = useState(false);
 
   useEffect(() => window.scrollTo(0, 0), []);
 
   return (
     <Fragment>
+      {
+        showFlashMessage &&
+        <FlashMessage
+          attending={attending}
+          setShowFlashMessage={setShowFlashMessage}/>
+      }
       <Banner
         imageUrl={WeddingRSVP}
         heroTitle={'RSVP'}

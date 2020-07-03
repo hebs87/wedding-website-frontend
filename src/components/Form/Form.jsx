@@ -76,7 +76,7 @@ class Form extends Component {
       .then(() => {
         setTimeout(function () {
           window.location.href = '/'
-        }, 3000);
+        }, 4000);
       })
       .catch(err => console.log(err));
   }

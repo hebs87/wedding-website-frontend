@@ -49,7 +49,7 @@ const RightNav = ({open, setOpen}) => {
       <li>
         <NavLink
           exact to="/"
-          activeStyle={{opacity: 1}}
+          activeStyle={{color: '#d83600'}}
           onClick={() => setOpen(!open)}
         >
           <FontAwesomeIcon className='nav-link-icon' icon={faRing}/>
@@ -59,7 +59,7 @@ const RightNav = ({open, setOpen}) => {
       <li>
         <NavLink
           exact to="/location"
-          activeStyle={{opacity: 1}}
+          activeStyle={{color: '#d83600'}}
           onClick={() => setOpen(!open)}
         >
           <FontAwesomeIcon className='nav-link-icon' icon={faMapMarkedAlt}/>
@@ -69,7 +69,7 @@ const RightNav = ({open, setOpen}) => {
       <li>
         <NavLink
           exact to="/rsvp"
-          activeStyle={{opacity: 1}}
+          activeStyle={{color: '#d83600'}}
           onClick={() => setOpen(!open)}
         >
           <FontAwesomeIcon className='nav-link-icon' icon={faCommentDots}/>

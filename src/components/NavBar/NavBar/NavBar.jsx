@@ -31,7 +31,7 @@ const NavBar = () => {
             <NavLink
               exact to="/"
               className={classes.navLink}
-              activeStyle={{opacity: 1}}
+              activeStyle={{color: '#d83600'}}
             >
               <FontAwesomeIcon className={classes.faIcon} icon={faRing}/>
               Wedding
@@ -39,7 +39,7 @@ const NavBar = () => {
             <NavLink
               exact to="/location"
               className={classes.navLink}
-              activeStyle={{opacity: 1}}
+              activeStyle={{color: '#d83600'}}
             >
               <FontAwesomeIcon className={classes.faIcon} icon={faMapMarkedAlt}/>
               Location
@@ -47,7 +47,7 @@ const NavBar = () => {
             <NavLink
               exact to="/rsvp"
               className={classes.navLink}
-              activeStyle={{opacity: 1}}
+              activeStyle={{color: '#d83600'}}
             >
               <FontAwesomeIcon className={classes.faIcon} icon={faCommentDots}/>
               RSVP

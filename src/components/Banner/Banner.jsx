@@ -6,7 +6,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCommentDots} from "@fortawesome/free-solid-svg-icons/faCommentDots";
 import {useStyles} from './Banner.styles';
 
-const Banner = ({imageUrl, heroTitle, title, firstTextLine, secondTextLine, button}) => {
+const Banner = ({imageUrl, heroTitle, title, firstTextLine, secondTextLine, button, handleClick}) => {
   // Get the classes from the useStyles function
   const classes = useStyles();
 
@@ -47,7 +47,7 @@ const Banner = ({imageUrl, heroTitle, title, firstTextLine, secondTextLine, butt
         }
         {
           button &&
-          <Button className={classes.bannerBtn}>
+          <Button className={classes.bannerBtn} onClick={handleClick}>
             {button}
             <FontAwesomeIcon className={classes.faIcon} icon={faCommentDots}/>
           </Button>

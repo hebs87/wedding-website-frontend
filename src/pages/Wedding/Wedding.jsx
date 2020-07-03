@@ -34,6 +34,10 @@ class WeddingPage extends Component {
       .catch(err => console.log(err));
   }
 
+  routeToRSVP = () => {
+    window.location.href = '/rsvp'
+  }
+
   render() {
     const {classes} = this.props;
     const {images, loading} = this.state;
@@ -46,6 +50,7 @@ class WeddingPage extends Component {
           firstTextLine={'1 June, 2021'}
           secondTextLine={'Orlando, Florida'}
           button={'RSVP'}
+          handleClick={this.routeToRSVP}
         />
         <Container maxWidth='md' className={classes.carouselContentContainer}>
           <Typography variant='h3' component='h3' className={classes.heading}>Our Story</Typography>

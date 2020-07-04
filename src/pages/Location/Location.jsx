@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from "react";
-import {styles} from "./Location.styles";
+import {styles} from "../Wedding/Wedding.styles";
 import {withStyles} from "@material-ui/core";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
@@ -47,7 +47,7 @@ class Location extends Component {
           firstTextLine={'Orlando, Florida'}
         />
         <Fade bottom>
-          <Container maxWidth='md' className={classes.carouselContentContainer}>
+          <Container maxWidth='md' className={classes.contentContainer}>
             <Typography variant='h3' component='h3' className={classes.heading}>The Venue</Typography>
             <Typography variant='p' component='p' className={classes.sectionParagraph}>
               Lorem ipsum odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque

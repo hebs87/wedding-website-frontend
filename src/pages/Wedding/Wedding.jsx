@@ -55,7 +55,7 @@ class WeddingPage extends Component {
           handleClick={this.routeToRSVP}
         />
         <Fade bottom>
-          <Container maxWidth='md' className={classes.carouselContentContainer}>
+          <Container maxWidth='md' className={classes.contentContainer}>
             <Typography variant='h3' component='h3' className={classes.heading}>Our Story</Typography>
             <Typography variant='p' component='p' className={classes.sectionParagraph}>
               Lorem ipsum odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque

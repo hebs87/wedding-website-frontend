@@ -60,6 +60,13 @@ class Location extends Component {
               aliquam nulla facilisi cras fermentum odio eu feugiat pretium nibh ipsum consequat nisl vel pretium
               lectus.
             </Typography>
+            <Typography variant='p' component='p' className={classes.sectionParagraph}>
+              1193 Grand Traverse Pkwy
+              <br/>
+              Kissimmee
+              <br/>
+              FL. 34747
+            </Typography>
             {
               loading &&
               <Spinner/>

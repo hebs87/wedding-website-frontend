@@ -66,7 +66,7 @@ class Form extends Component {
         attending: formSelections.attending,
         not_attending: formSelections.notAttending ? formSelections.notAttending : "N/A",
         favourite_song: formSelections.song,
-        favourite_drink: formSelections.drink,
+        favourite_drink: formSelections.drink ? formSelections.drink : 'N/A',
         dietary_requirements: formSelections.dietaryRequirements ? formSelections.dietaryRequirements : "N/A",
         additional_info: formSelections.additionalInfo ? formSelections.additionalInfo : "N/A"
       })

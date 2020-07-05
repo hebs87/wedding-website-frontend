@@ -103,7 +103,7 @@ class Form extends Component {
     if (!this.state.formSelections.song) {
       songHasError = true;
     }
-    if (!this.state.formSelections.drink) {
+    if (!this.state.formSelections.drink && this.state.formSelections.attending === 'Yes') {
       drinkHasError = true;
     }
     this.setState({guestGroupHasError, attendingHasError, songHasError, drinkHasError},

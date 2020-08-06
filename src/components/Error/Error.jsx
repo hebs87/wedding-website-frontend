@@ -7,7 +7,7 @@ import {faHome} from "@fortawesome/free-solid-svg-icons/faHome";
 import OrangeTree from "../../static/assets/orange-tree.jpg";
 import {useStyles} from './Error.styles';
 
-const Banner = () => {
+const Error = () => {
   // Get the classes from the useStyles function
   const classes = useStyles();
 
@@ -47,4 +47,4 @@ const Banner = () => {
   )
 }
 
-export default Banner;
+export default Error;

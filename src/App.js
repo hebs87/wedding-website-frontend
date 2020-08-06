@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import {Route} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import './App.css';
 import NavBarContainer from "./components/NavBar/NavBarContainer";
 import WeddingPage from "./pages/Wedding/Wedding";
@@ -36,21 +36,26 @@ class App extends Component {
           !hasError &&
           <Fragment>
             <NavBarContainer/>
-            <Route
-              exact
-              path="/"
-              render={props => <WeddingPage setErrorTrue={this.setErrorTrue} {...props}/>}
-            />
-            <Route
-              exact
-              path="/location"
-              render={props => <Location setErrorTrue={this.setErrorTrue} {...props}/>}
-            />
-            <Route
-              exact
-              path="/rsvp"
-              render={props => <RSVP setErrorTrue={this.setErrorTrue} {...props}/>}
-            />
+            <Switch>
+              <Route
+                exact
+                path="/"
+                render={props => <WeddingPage setErrorTrue={this.setErrorTrue} {...props}/>}
+              />
+              <Route
+                exact
+                path="/location"
+                render={props => <Location setErrorTrue={this.setErrorTrue} {...props}/>}
+              />
+              <Route
+                exact
+                path="/rsvp"
+                render={props => <RSVP setErrorTrue={this.setErrorTrue} {...props}/>}
+              />
+              <Route
+                component={Error}
+              />
+            </Switch>
             <Footer/>
           </Fragment>
         }

@@ -15,9 +15,13 @@ class App extends Component {
     this.state = {
       showFlashMessage: false,
       attending: false,
-      hasError: true,
+      hasError: false,
     }
   }
+
+  setErrorTrue = () => {
+    this.setState({hasError: true});
+  };
 
   render() {
     const {hasError} = this.state;
@@ -35,17 +39,17 @@ class App extends Component {
             <Route
               exact
               path="/"
-              component={WeddingPage}
+              render={props => <WeddingPage setErrorTrue={this.setErrorTrue} {...props}/>}
             />
             <Route
               exact
               path="/location"
-              component={Location}
+              render={props => <Location setErrorTrue={this.setErrorTrue} {...props}/>}
             />
             <Route
               exact
               path="/rsvp"
-              component={RSVP}
+              render={props => <RSVP setErrorTrue={this.setErrorTrue} {...props}/>}
             />
             <Footer/>
           </Fragment>

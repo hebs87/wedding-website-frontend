@@ -32,7 +32,7 @@ class Location extends Component {
     })
       .then(res => res.json())
       .then(images => this.setState({images, loading: false}))
-      .catch(err => console.log(err));
+      .catch(err => this.props.setErrorTrue());
   }
 
   render() {

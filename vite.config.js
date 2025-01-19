@@ -1,5 +1,5 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 import path from 'path';
 
 // https://vite.dev/config/
@@ -18,35 +18,23 @@ export default defineConfig({
       host: '0.0.0.0',
     },
   },
-  // test: {
-  //   environment: 'jsdom',
-  //   setupFiles: ['./src/tests/setup.js'],
-  //   testMatch: ['./src/**/*.test.jsx', './src/**/*.test.js'],
-  //   globals: true,
-  //   watch: false,
-  //   sequence: {
-  //     setupFiles: 'list',
-  //   },
-  // },
   resolve: {
     alias: {
-      assets: path.resolve('src/assets/'),
       api: path.resolve('src/api/'),
+      assets: path.resolve('src/assets/'),
       components: path.resolve('src/components/'),
-      config: path.resolve('src/config/'),
-      styles: path.resolve('src/styles/'),
-      data: path.resolve('src/data/'),
-      tests: path.resolve('src/tests/'),
-      testData: path.resolve('src/testData/'),
-      routes: path.resolve('src/routes/'),
-      utils: path.resolve('src/utils/'),
-      pages: path.resolve('src/pages/'),
       constants: path.resolve('src/constants/'),
       contexts: path.resolve('src/contexts/'),
-      templates: path.resolve('src/templates/'),
-      guards: path.resolve('src/guards/'),
+      config: path.resolve('src/config/'),
+      data: path.resolve('src/data/'),
       outlets: path.resolve('src/outlets/'),
-      "@": path.resolve(__dirname, "./src"),
+      pages: path.resolve('src/pages/'),
+      routes: path.resolve('src/routes/'),
+      styles: path.resolve('src/styles/'),
+      templates: path.resolve('src/templates/'),
+      testData: path.resolve('src/testData/'),
+      utils: path.resolve('src/utils/'),
+      '@': path.resolve(__dirname, './src'),
     },
   },
-})
+});

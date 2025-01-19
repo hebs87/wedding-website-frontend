@@ -1,10 +1,22 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import { createRoot } from 'react-dom/client';
+import { createBrowserHistory } from 'history';
+import { BrowserRouter } from 'react-router';
+
+import ErrorBoundary from 'components/ErrorBoundary/ErrorBoundary';
+import App from './App.jsx';
+
+// imports tailwindcss
+import 'styles/_styles.scss';
+
+// Enable redirect for S3
+const history = createBrowserHistory();
+const path = (/#!(\/.*)$/.exec(location.hash) || [])[1];
+if (path) history.replace(path);
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+  <ErrorBoundary>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </ErrorBoundary>,
+);

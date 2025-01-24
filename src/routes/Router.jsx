@@ -4,13 +4,14 @@ import { AnimatePresence } from 'framer-motion';
 
 // pages
 import Home from 'pages/Home/Home';
+import OurStory from 'pages/OurStory/OurStory';
 import Wedding from 'pages/Wedding/Wedding';
 import Party from 'pages/Party/Party';
 import Gallery from 'pages/Gallery/Gallery';
 import RSVP from 'pages/RSVP/RSVP';
 
 // config
-import { PATH_HOME, PATH_WEDDING, PATH_PARTY, PATH_GALLERY, PATH_RSVP, CODE_PARAM } from 'routes/paths';
+import { PATH_HOME, PATH_OUR_STORY, PATH_WEDDING, PATH_PARTY, PATH_GALLERY, PATH_RSVP, CODE_PARAM } from 'routes/paths';
 
 const Router = () => {
   const elements = useRoutes([
@@ -22,6 +23,17 @@ const Router = () => {
         {
           path: CODE_PARAM,
           element: <Home />,
+        },
+      ],
+    },
+    {
+      path: PATH_OUR_STORY,
+      element: <OurStory />,
+      children: [
+        { element: <OurStory />, index: true },
+        {
+          path: CODE_PARAM,
+          element: <OurStory />,
         },
       ],
     },

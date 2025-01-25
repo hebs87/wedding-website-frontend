@@ -1,10 +1,9 @@
 .MobileNavbar {
-  transition: all 0.25s ease;
-
-  &.scrolled {
-    backdrop-filter: saturate(180%) blur(10px);
-    -webkit-backdrop-filter: saturate(180%) blur(10px);
-  }
+  backdrop-filter: saturate(180%) blur(10px);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.25);
+  -moz-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.25);
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.25);
 }
 
 #MobileDrawer {

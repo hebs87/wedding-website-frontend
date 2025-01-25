@@ -18,26 +18,18 @@ const MobileNavbar = () => {
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
 
   useEffect(() => {
-    const handleNavScroll = () => {
-      const topThreshold = 50;
-      const navbar = document.querySelector('#MobileNavbar');
-      if (window.scrollY > topThreshold) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    };
-
-    window.addEventListener('scroll', handleNavScroll);
-
-    // Remove event listener when component dismounts
-    return () => window.removeEventListener('scroll', handleNavScroll);
-  }, []);
-
-  useEffect(() => {
     if (isMobile || !mobileNavOpen) return;
     setMobileNavOpen(false);
   }, [isMobile, mobileNavOpen]);
+
+  useEffect(() => {
+    const body = document.body;
+    if (mobileNavOpen) {
+      body.classList.add('lock-scroll');
+    } else {
+      body.classList.remove('lock-scroll');
+    }
+  }, [mobileNavOpen]);
 
   const toggleMobileNav = () => setMobileNavOpen((prevState) => !prevState);
 

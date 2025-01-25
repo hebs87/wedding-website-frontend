@@ -23,10 +23,18 @@
 }
 
 body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   background-color: #F8F8F8;
   font-family: Amiko, 'sans-serif';
   color: #8C1F1E;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.lock-scroll {
+  height: 100%;
+  overflow: hidden;
 }

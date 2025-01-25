@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useParams } from 'react-router';
 
 import Logo from 'components/Logo/Logo';
@@ -11,23 +10,6 @@ import './Navbar.styles.scss';
 const Navbar = () => {
   const { code } = useParams();
   const codePath = code ? `/${code}` : '';
-
-  useEffect(() => {
-    const handleNavScroll = () => {
-      const topThreshold = 50;
-      const navbar = document.querySelector('#Navbar');
-      if (window.scrollY > topThreshold) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    };
-
-    window.addEventListener('scroll', handleNavScroll);
-
-    // Remove event listener when component dismounts
-    return () => window.removeEventListener('scroll', handleNavScroll);
-  }, []);
 
   return (
     <div data-testid="Navbar" id="Navbar" className="Navbar fixed top-0 z-[999] hidden w-full justify-center md:flex">

@@ -11,7 +11,25 @@ export default {
 };
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const NavLinkDesktop = {};
+const Desktop = {
+  args: {},
+  parameters: {
+    backgrounds: {
+      default: 'white',
+      values: [
+        {
+          name: 'white',
+          value: '#FFF',
+        },
+      ],
+    },
+    viewport: {
+      defaultViewport: 'responsive',
+    },
+  },
+};
+
+export const NavLinkDesktop = JSON.parse(JSON.stringify(Desktop));
 NavLinkDesktop.args = {
   text: 'Home',
   path: '/',

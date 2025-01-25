@@ -1,10 +1,10 @@
-import TemplateName from './TemplateName';
+import Heading from './Heading';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
-const Component = (props) => <TemplateName {...props} />;
+const Component = (props) => <Heading {...props} />;
 
 export default {
-  title: 'Components/TemplateName',
+  title: 'Components/Heading',
   component: Component,
   tags: ['autodocs'],
   argTypes: {},
@@ -29,8 +29,16 @@ const Desktop = {
   },
 };
 
-export const TemplateNameDesktop = JSON.parse(JSON.stringify(Desktop));
-TemplateNameDesktop.args = {};
+export const HeadingPrimaryDesktop = JSON.parse(JSON.stringify(Desktop));
+HeadingPrimaryDesktop.args = {
+  text: 'Hello World',
+};
+
+export const HeadingSecondaryDesktop = JSON.parse(JSON.stringify(Desktop));
+HeadingSecondaryDesktop.args = {
+  variant: 'secondary',
+  text: 'Hello World',
+};
 
 const Mobile = {
   args: {},
@@ -50,5 +58,13 @@ const Mobile = {
   },
 };
 
-export const TemplateNameMobile = JSON.parse(JSON.stringify(Mobile));
-TemplateNameMobile.args = {};
+export const HeadingPrimaryMobile = JSON.parse(JSON.stringify(Mobile));
+HeadingPrimaryMobile.args = {
+  text: 'Hello World',
+};
+
+export const HeadingSecondaryMobile = JSON.parse(JSON.stringify(Mobile));
+HeadingSecondaryMobile.args = {
+  variant: 'secondary',
+  text: 'Hello World',
+};

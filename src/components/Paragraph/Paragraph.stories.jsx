@@ -1,10 +1,10 @@
-import TemplateName from './TemplateName';
+import Paragraph from './Paragraph';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
-const Component = (props) => <TemplateName {...props} />;
+const Component = (props) => <Paragraph {...props} />;
 
 export default {
-  title: 'Components/TemplateName',
+  title: 'Components/Paragraph',
   component: Component,
   tags: ['autodocs'],
   argTypes: {},
@@ -29,8 +29,16 @@ const Desktop = {
   },
 };
 
-export const TemplateNameDesktop = JSON.parse(JSON.stringify(Desktop));
-TemplateNameDesktop.args = {};
+export const ParagraphStandardDesktop = JSON.parse(JSON.stringify(Desktop));
+ParagraphStandardDesktop.args = {
+  text: 'This is an example paragraph',
+};
+
+export const ParagraphUppercaseDesktop = JSON.parse(JSON.stringify(Desktop));
+ParagraphUppercaseDesktop.args = {
+  variant: 'uppercase',
+  text: 'This is an example paragraph',
+};
 
 const Mobile = {
   args: {},
@@ -50,5 +58,13 @@ const Mobile = {
   },
 };
 
-export const TemplateNameMobile = JSON.parse(JSON.stringify(Mobile));
-TemplateNameMobile.args = {};
+export const ParagraphStandardMobile = JSON.parse(JSON.stringify(Mobile));
+ParagraphStandardMobile.args = {
+  text: 'This is an example paragraph',
+};
+
+export const ParagraphUppercaseMobile = JSON.parse(JSON.stringify(Mobile));
+ParagraphUppercaseMobile.args = {
+  variant: 'uppercase',
+  text: 'This is an example paragraph',
+};

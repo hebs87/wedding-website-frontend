@@ -4,7 +4,7 @@ import './Container.styles.scss';
 
 const Container = ({ children }) => {
   return (
-    <div data-testid="Container" className="h-screen w-full bg-black">
+    <div data-testid="Container" className="h-screen w-full bg-background">
       {children}
     </div>
   );

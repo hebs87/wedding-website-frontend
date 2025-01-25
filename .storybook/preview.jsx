@@ -1,10 +1,10 @@
 /** @type { import('@storybook/react').Preview } */
 import { BrowserRouter } from 'react-router';
 
-import Container from '../src/components/Container/Container';
+import Container from 'components/Container/Container';
 
 import 'tailwindcss/tailwind.css';
-import '../src/styles/_styles.scss';
+import 'styles/_styles.scss';
 
 const preview = {
   parameters: {

@@ -1,0 +1,13 @@
+.MobileNavbar {
+  transition: all 0.25s ease;
+
+  &.scrolled {
+    backdrop-filter: saturate(180%) blur(10px);
+    -webkit-backdrop-filter: saturate(180%) blur(10px);
+  }
+}
+
+#MobileDrawer {
+  backdrop-filter: saturate(180%) blur(10px);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+}

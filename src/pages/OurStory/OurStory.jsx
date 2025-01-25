@@ -1,7 +1,7 @@
 import './OurStory.styles.scss';
 
 const OurStory = () => {
-  return <div className="OurStory">OurStory</div>;
+  return <div className="Our Story">OurStory</div>;
 };
 
 OurStory.propTypes = {};

@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 
 import './Paragraph.styles.scss';
 
-const Paragraph = ({ variant = 'standard', text }) => {
+const Paragraph = ({ variant = 'standard', text, customClasses = '' }) => {
   return (
-    <p data-testid="Paragraph" className={`Paragraph ${variant}`}>
+    <p data-testid="Paragraph" className={`Paragraph ${variant} ${customClasses}`}>
       {text}
     </p>
   );
@@ -13,6 +13,7 @@ const Paragraph = ({ variant = 'standard', text }) => {
 Paragraph.propTypes = {
   variant: PropTypes.oneOf(['standard', 'uppercase']),
   text: PropTypes.string.isRequired,
+  customClasses: PropTypes.string,
 };
 
 export default Paragraph;

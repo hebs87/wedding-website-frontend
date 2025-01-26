@@ -1,10 +1,10 @@
-import Burger from './Burger';
+import Countdown from './Countdown';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
-const Component = (props) => <Burger {...props} />;
+const Component = (props) => <Countdown {...props} />;
 
 export default {
-  title: 'Components/Burger',
+  title: 'Components/Countdown',
   component: Component,
   tags: ['autodocs'],
   argTypes: {},
@@ -29,10 +29,12 @@ const Desktop = {
   },
 };
 
-export const BurgerDesktop = JSON.parse(JSON.stringify(Desktop));
-BurgerDesktop.args = {
-  mobileNavOpen: false,
-  toggleMobileNav: () => {},
+export const CountdownWeddingDesktop = JSON.parse(JSON.stringify(Desktop));
+CountdownWeddingDesktop.args = {};
+
+export const CountdownPartyDesktop = JSON.parse(JSON.stringify(Desktop));
+CountdownPartyDesktop.args = {
+  variant: 'party',
 };
 
 const Mobile = {
@@ -53,8 +55,10 @@ const Mobile = {
   },
 };
 
-export const BurgerMobile = JSON.parse(JSON.stringify(Mobile));
-BurgerMobile.args = {
-  mobileNavOpen: false,
-  toggleMobileNav: () => {},
+export const CountdownWeddingMobile = JSON.parse(JSON.stringify(Mobile));
+CountdownWeddingMobile.args = {};
+
+export const CountdownPartyMobile = JSON.parse(JSON.stringify(Mobile));
+CountdownPartyMobile.args = {
+  variant: 'party',
 };

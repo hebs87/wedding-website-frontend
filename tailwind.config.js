@@ -13,6 +13,8 @@ export default {
         background: '#F8F8F8',
         title: '#C80100',
         text: '#8C1F1E',
+        'grey-1': '#808080',
+        'grey-2': '#C6C6C6',
       },
       screens: {
         xs: '480px',

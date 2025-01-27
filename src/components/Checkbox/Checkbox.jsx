@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 import './Checkbox.styles.scss';
 
-const Checkbox = ({ name, checked, onChange, text, error = 'There has been an error' }) => {
+const Checkbox = ({ name, checked, onChange, text, error }) => {
   return (
     <div data-testid="Checkbox" className="Checkbox relative">
       <label htmlFor={name} className="flex cursor-pointer items-start">

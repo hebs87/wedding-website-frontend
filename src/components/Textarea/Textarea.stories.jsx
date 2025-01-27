@@ -1,6 +1,5 @@
 import { useState } from 'react';
-
-import Input from './Input';
+import Textarea from './Textarea';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const Component = (props) => {
@@ -14,8 +13,8 @@ const Component = (props) => {
   };
 
   return (
-    <Input
-      label="Code"
+    <Textarea
+      label="Additional info"
       required
       name="test"
       placeholder="Enter your value here"
@@ -28,7 +27,7 @@ const Component = (props) => {
 };
 
 export default {
-  title: 'Components/Input',
+  title: 'Components/Textarea',
   component: Component,
   tags: ['autodocs'],
   argTypes: {},
@@ -53,8 +52,8 @@ const Desktop = {
   },
 };
 
-export const InputDesktop = JSON.parse(JSON.stringify(Desktop));
-InputDesktop.args = {};
+export const TextareaDesktop = JSON.parse(JSON.stringify(Desktop));
+TextareaDesktop.args = {};
 
 const Mobile = {
   args: {},
@@ -74,5 +73,5 @@ const Mobile = {
   },
 };
 
-export const InputMobile = JSON.parse(JSON.stringify(Mobile));
-InputMobile.args = {};
+export const TextareaMobile = JSON.parse(JSON.stringify(Mobile));
+TextareaMobile.args = {};

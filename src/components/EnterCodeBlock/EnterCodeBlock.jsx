@@ -7,14 +7,16 @@ import Input from 'components/Input/Input';
 import Button from 'components/Button/Button';
 
 import { getInvitation } from 'api';
+import { useInvitationContext } from 'contexts/InvitationContext/useInvitationContext';
 
 import './EnterCodeBlock.styles.scss';
 
 const EnterCodeBlock = () => {
+  const { code: codeParam } = useParams();
   const [code, setCode] = useState('');
   const [isValid, setIsValid] = useState(false);
   const [error, setError] = useState('');
-  const { code: codeParam } = useParams();
+  const { setInvitationData } = useInvitationContext();
 
   const handleInputChange = (name, value) => {
     setCode(value);
@@ -26,9 +28,7 @@ const EnterCodeBlock = () => {
     try {
       setError('');
       const { invitation } = await getInvitation(code);
-      // TODO: Add invitation data to context
-      console.log('invitation');
-      console.log(invitation);
+      setInvitationData({ ...invitation, code });
     } catch (err) {
       const { error_message } = err;
       setError(error_message || 'Something went wrong');

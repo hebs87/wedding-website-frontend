@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router';
 
 import ErrorBoundary from 'components/ErrorBoundary/ErrorBoundary';
 import App from './App.jsx';
+import InvitationContextProvider from 'contexts/InvitationContext/InvitationContextProvider';
 
 // imports tailwindcss
 import 'styles/_styles.scss';
@@ -16,7 +17,9 @@ if (path) history.replace(path);
 createRoot(document.getElementById('root')).render(
   <ErrorBoundary>
     <BrowserRouter>
-      <App />
+      <InvitationContextProvider>
+        <App />
+      </InvitationContextProvider>
     </BrowserRouter>
   </ErrorBoundary>,
 );

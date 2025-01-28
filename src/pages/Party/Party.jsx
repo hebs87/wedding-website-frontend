@@ -1,9 +1,13 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router';
+import AOS from 'aos';
+
+import EnterCodeBlock from 'components/EnterCodeBlock/EnterCodeBlock';
 
 import { getInvitationData } from 'utils/helpers/getInvitationData';
 import { useInvitationContext } from 'contexts/InvitationContext/useInvitationContext';
 
+import 'aos/dist/aos.css';
 import './Party.styles.scss';
 
 const Party = () => {
@@ -18,12 +22,28 @@ const Party = () => {
   } = useInvitationContext();
 
   useEffect(() => {
-    getInvitationData(code, setInvitationError, setInvitationData, setInvitationLoading);
+    AOS.init({
+      duration: 1000, // Duration of animations
+      easing: 'ease-in-out', // Easing function
+      once: false, // Animation should only happen once
+    });
+    AOS.refresh();
+  }, []);
+
+  useEffect(() => {
+    getInvitationData(code, invitationData, setInvitationError, setInvitationData, setInvitationLoading);
   }, [code, invitationData]);
 
   if (invitationLoading) return;
 
-  return <div className="Party">{invitationError ? invitationError : 'Party'}</div>;
+  if (!code || invitationError)
+    return (
+      <div data-aos="fade-in" data-aos-duration="1000" className="mx-auto max-w-[600px]">
+        <EnterCodeBlock />
+      </div>
+    );
+
+  return <div className="Party">Party</div>;
 };
 
 Party.propTypes = {};

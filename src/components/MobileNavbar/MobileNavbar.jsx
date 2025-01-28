@@ -50,7 +50,7 @@ const MobileNavbar = () => {
       <div
         id="MobileDrawer"
         ref={mobileDrawerRef}
-        className={`fixed top-[73px] h-[calc(100vh-73px)] w-[100vw] transition-all duration-500 md:hidden ${mobileNavOpen ? 'right-0' : 'right-[-100vw]'}`}
+        className={`fixed top-[73px] z-[999] h-[calc(100vh-73px)] w-[100vw] transition-all duration-500 md:hidden ${mobileNavOpen ? 'right-0' : 'right-[-100vw]'}`}
       >
         {MOBILE_NAV_LINKS.map(({ text, path }, i) => {
           if ((!invitationData && text === 'Gallery') || (invitation_type !== 'wedding' && text === 'Wedding'))

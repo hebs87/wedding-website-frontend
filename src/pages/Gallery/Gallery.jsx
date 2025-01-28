@@ -1,10 +1,14 @@
 import { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router';
+import AOS from 'aos';
+
+import EnterCodeBlock from 'components/EnterCodeBlock/EnterCodeBlock';
 
 import { PATH_HOME } from 'routes/paths';
 import { getInvitationData } from 'utils/helpers/getInvitationData';
 import { useInvitationContext } from 'contexts/InvitationContext/useInvitationContext';
 
+import 'aos/dist/aos.css';
 import './Gallery.styles.scss';
 
 const Gallery = () => {
@@ -20,14 +24,30 @@ const Gallery = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!code) return navigate(PATH_HOME);
+    AOS.init({
+      duration: 1000, // Duration of animations
+      easing: 'ease-in-out', // Easing function
+      once: false, // Animation should only happen once
+    });
+    AOS.refresh();
+  }, []);
 
-    getInvitationData(code, setInvitationError, setInvitationData, setInvitationLoading);
+  useEffect(() => {
+    if (!code || (invitationData && invitationData?.invitation_type !== 'wedding')) return navigate(PATH_HOME);
+
+    getInvitationData(code, invitationData, setInvitationError, setInvitationData, setInvitationLoading);
   }, [code, invitationData]);
 
   if (invitationLoading) return;
 
-  return <div className="Gallery">{invitationError ? invitationError : 'Gallery'}</div>;
+  if (invitationError)
+    return (
+      <div data-aos="fade-in" data-aos-duration="1000" className="mx-auto max-w-[600px]">
+        <EnterCodeBlock />
+      </div>
+    );
+
+  return <div className="Gallery">Gallery</div>;
 };
 
 Gallery.propTypes = {};

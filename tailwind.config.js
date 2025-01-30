@@ -10,7 +10,7 @@ export default {
         AmikoBold: ['AmikoBold', 'sans-serif'],
       },
       colors: {
-        background: '#F8F8F8',
+        background: '#F4E2B4',
         title: '#C80100',
         text: '#8C1F1E',
         'grey-1': '#808080',

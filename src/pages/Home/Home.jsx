@@ -10,7 +10,7 @@ import Countdown from 'components/Countdown/Countdown';
 import { getInvitationData } from 'utils/helpers/getInvitationData';
 import { useInvitationContext } from 'contexts/InvitationContext/useInvitationContext';
 
-import HomeImg from 'assets/images/home-img.jpg';
+import HomeImage from 'assets/gifs/home-image.gif';
 
 import 'aos/dist/aos.css';
 import './Home.styles.scss';
@@ -53,8 +53,8 @@ const Home = () => {
       <div data-aos="fade-in" data-aos-duration="1000">
         <Heading text="We're finally getting hitched 🤵🏾‍♂️👰🏻‍♀️" />
       </div>
-      <div className="mx-auto max-w-[600px]" data-aos="fade-in" data-aos-duration="1000">
-        <Image image={HomeImg} />
+      <div className="mx-auto w-full max-w-[600px]" data-aos="fade-in" data-aos-duration="1000">
+        <Image image={HomeImage} />
       </div>
       {invitationData?.invitation_type === 'wedding' && (
         <div data-aos="fade-right" data-aos-duration="1000">

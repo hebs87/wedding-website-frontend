@@ -3,7 +3,10 @@ import { useParams } from 'react-router';
 import AOS from 'aos';
 
 import EnterCodeBlock from 'components/EnterCodeBlock/EnterCodeBlock';
+import Heading from 'components/Heading/Heading';
+import Paragraph from 'components/Paragraph/Paragraph';
 
+import { OUR_STORY_POEM } from 'constants/poems';
 import { getInvitationData } from 'utils/helpers/getInvitationData';
 import { useInvitationContext } from 'contexts/InvitationContext/useInvitationContext';
 
@@ -43,7 +46,18 @@ const OurStory = () => {
       </div>
     );
 
-  return <div className="OurStory">Our Story</div>;
+  return (
+    <div className="OurStory flex flex-col gap-[40px] text-center">
+      <div data-aos="fade-in" data-aos-duration="1000">
+        <Heading text="How we got here 💖" />
+      </div>
+      <div data-aos="fade-in" data-aos-duration="1000" className="text-left md:text-center">
+        {OUR_STORY_POEM.map((paragraph, index) => (
+          <Paragraph key={index} text={paragraph} />
+        ))}
+      </div>
+    </div>
+  );
 };
 
 OurStory.propTypes = {};

@@ -3,6 +3,7 @@ import { useParams } from 'react-router';
 import AOS from 'aos';
 
 import EnterCodeBlock from 'components/EnterCodeBlock/EnterCodeBlock';
+import Heading from 'components/Heading/Heading';
 
 import { getInvitationData } from 'utils/helpers/getInvitationData';
 import { useInvitationContext } from 'contexts/InvitationContext/useInvitationContext';
@@ -43,7 +44,13 @@ const RSVP = () => {
       </div>
     );
 
-  return <div className="RSVP">RSVP</div>;
+  return (
+    <div className="RSVP flex flex-col gap-[20px] text-center md:gap-[40px]">
+      <div data-aos="fade-in" data-aos-duration="1000">
+        <Heading text="See you there? ✍️" />
+      </div>
+    </div>
+  );
 };
 
 RSVP.propTypes = {};

@@ -28,6 +28,8 @@ const EnterCodeBlock = () => {
   };
 
   const handleSubmit = async () => {
+    if (code?.length !== 10) return;
+
     try {
       setError('');
       const { invitation } = await getInvitation(code);
@@ -71,6 +73,7 @@ const EnterCodeBlock = () => {
           value={code}
           onChange={handleInputChange}
           error={error}
+          handleSubmit={handleSubmit}
         />
       </div>
       <Button text="Submit" onClick={handleSubmit} disabled={!isValid} />

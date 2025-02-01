@@ -6,13 +6,13 @@ const Textarea = ({ label, required, name, placeholder, value, onChange, rows = 
   return (
     <div data-testid="Textarea" className="Textarea flex w-full flex-col gap-[5px]">
       {label && (
-        <label htmlFor={name} className="text-[14px] text-title">
+        <label htmlFor={name} className="font-AmikoBold text-[14px] text-text">
           {label}
           {required && ' *'}
         </label>
       )}
       <textarea
-        className="border-grey-2 rounded-[5px] border-[1px] bg-transparent p-[10px] placeholder:text-text placeholder:opacity-50"
+        className="rounded-[5px] border-[1px] border-grey-2 bg-transparent p-[10px] placeholder:text-text placeholder:opacity-50"
         id={name}
         placeholder={placeholder}
         value={value}

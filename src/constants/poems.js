@@ -8,7 +8,7 @@ export const OUR_STORY_POEM = [
   'In a company called Flex is where we first met,',
   'A part of our journey that we could never forget,',
   'Starting off as teammates we soon became friends,',
-  "It became clear quote early on that our journey wouldn't end,",
+  "It became clear quite early on that our journey wouldn't end,",
   'As we got to know each other we figured out the score,',
   'We soon evolved into something much more,',
   'August 2013 is when we went on our first date,',

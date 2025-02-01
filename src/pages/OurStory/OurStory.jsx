@@ -53,7 +53,7 @@ const OurStory = () => {
       </div>
       <div data-aos="fade-in" data-aos-duration="1000" className="text-left md:text-center">
         {OUR_STORY_POEM.map((paragraph, index) => (
-          <Paragraph key={index} text={paragraph} />
+          <Paragraph key={index} variant="uppercase" text={paragraph} />
         ))}
       </div>
     </div>

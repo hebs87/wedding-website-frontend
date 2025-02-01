@@ -47,7 +47,7 @@ const OurStory = () => {
     );
 
   return (
-    <div className="OurStory flex flex-col gap-[40px] text-center">
+    <div className="OurStory flex flex-col gap-[20px] text-center md:gap-[40px]">
       <div data-aos="fade-in" data-aos-duration="1000">
         <Heading text="How we got here 💖" />
       </div>

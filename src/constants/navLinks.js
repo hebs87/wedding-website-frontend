@@ -1,4 +1,4 @@
-import { PATH_HOME, PATH_OUR_STORY, PATH_WEDDING, PATH_PARTY, PATH_RSVP, PATH_GALLERY } from 'routes/paths';
+import { PATH_HOME, PATH_OUR_STORY, PATH_WEDDING, PATH_PARTY, PATH_RSVP } from 'routes/paths';
 
 export const DESKTOP_NAV_LINKS = [
   {
@@ -16,10 +16,6 @@ export const DESKTOP_NAV_LINKS = [
   {
     text: 'RSVP',
     path: PATH_RSVP,
-  },
-  {
-    text: 'Gallery',
-    path: PATH_GALLERY,
   },
 ];
 

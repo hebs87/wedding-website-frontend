@@ -1,5 +1,6 @@
 import Navbar from 'components/Navbar/Navbar';
 import MobileNavbar from 'components/MobileNavbar/MobileNavbar';
+import WrappedLoadingSpinner from 'components/WrappedLoadingSpinner/WrappedLoadingSpinner';
 import PageContainer from 'components/PageContainer/PageContainer';
 import Footer from 'components/Footer/Footer';
 import Router from 'routes/Router';
@@ -12,12 +13,12 @@ const App = () => {
   return (
     <>
       {invitationLoading ? (
-        <div>
-          <div className="absolute flex h-screen w-screen items-center justify-center">Loading...</div>
+        <>
+          <WrappedLoadingSpinner />
           <PageContainer>
             <Router />
           </PageContainer>
-        </div>
+        </>
       ) : (
         <>
           <Navbar />

@@ -10,7 +10,7 @@ const Input = ({ type = 'text', label, required, name, placeholder, value, onCha
   return (
     <div data-testid="Input" className="Input flex w-full flex-col gap-[5px]">
       {label && (
-        <label htmlFor={name} className="text-[14px] text-title">
+        <label htmlFor={name} className="font-AmikoBold text-[14px] text-text">
           {label}
           {required && ' *'}
         </label>

@@ -17,7 +17,7 @@ export default {
         'grey-2': '#C6C6C6',
       },
       screens: {
-        xs: '480px',
+        xs: '420px',
         sm: '600px',
         md: '768px',
         lg: '1024px',

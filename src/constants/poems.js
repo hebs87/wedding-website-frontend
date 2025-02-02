@@ -2,7 +2,7 @@ export const OUR_STORY_POEM = [
   'This is the story of how we came to be,',
   'The wonderful story of Sunny and Kimmy,',
   'A boy from a small town in India,',
-  'Who came to a country much wetter and windier,',
+  'Came to a country much wetter and windier,',
   'And a girl from the county of Merseyside,',
   'Ultimately teamed up and embarked on a whirlwind ride,',
   'In a company called Flex is where we first met,',

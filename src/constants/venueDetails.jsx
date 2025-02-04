@@ -1,5 +1,5 @@
 import WeddingVenueImage from 'assets/images/wedding-venue.jpg';
-import MealVenueImage from 'assets/images/meal-venue.webp';
+import MealVenueImage from 'assets/images/meal-venue.jpg';
 import PartyVenueImage from 'assets/images/party-venue.jpg';
 
 export const WEDDING_VENUE_DETAILS = {

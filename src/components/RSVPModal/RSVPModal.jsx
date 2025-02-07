@@ -35,7 +35,12 @@ const RSVPModal = ({ isOpen, setIsOpen, children }) => {
             >
               <Dialog.Panel className="modal-container relative min-h-[100px] w-full max-w-[90%] transform overflow-hidden rounded-[10px] p-[30px] transition-all md:max-w-[600px]">
                 <div className="close-btn">
-                  <img src={CloseIcon} alt="Close" onClick={() => setIsOpen(false)} />
+                  <img
+                    className="duration-250 transition-all hover:opacity-70"
+                    src={CloseIcon}
+                    alt="Close"
+                    onClick={() => setIsOpen(false)}
+                  />
                 </div>
                 {children}
               </Dialog.Panel>

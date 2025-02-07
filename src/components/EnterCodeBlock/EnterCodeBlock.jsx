@@ -16,6 +16,7 @@ const EnterCodeBlock = () => {
   const { code: codeParam } = useParams();
   const [code, setCode] = useState('');
   const [isValid, setIsValid] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const { setInvitationData } = useInvitationContext();
   const { pathname } = useLocation();
@@ -31,6 +32,7 @@ const EnterCodeBlock = () => {
     if (code?.length !== 10) return;
 
     try {
+      setIsLoading(true);
       setError('');
       const { invitation } = await getInvitation(code);
       setInvitationData({ ...invitation, code });
@@ -49,10 +51,12 @@ const EnterCodeBlock = () => {
         path = `${PATH_HOME}${code}`;
       }
       navigate(path);
+      setIsLoading(false);
       if (code) window.location.reload();
     } catch (err) {
       const { error_message } = err;
       setError(error_message || 'Something went wrong');
+      setIsLoading(false);
     }
   };
 
@@ -76,7 +80,7 @@ const EnterCodeBlock = () => {
           handleSubmit={handleSubmit}
         />
       </div>
-      <Button text="Submit" onClick={handleSubmit} disabled={!isValid} />
+      <Button text="Submit" onClick={handleSubmit} disabled={!isValid || isLoading} loading={isLoading} />
     </div>
   );
 };

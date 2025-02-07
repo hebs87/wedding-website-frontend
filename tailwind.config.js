@@ -10,11 +10,11 @@ export default {
         AmikoBold: ['AmikoBold', 'sans-serif'],
       },
       colors: {
-        background: '#F4E2B4',
-        title: '#C80100',
-        text: '#8C1F1E',
-        'grey-1': '#808080',
-        'grey-2': '#C6C6C6',
+        background: '#F1F1E0',
+        title: '#346751',
+        text: '#123827',
+        error: '#C80100',
+        grey: '#808080',
       },
       screens: {
         xs: '420px',

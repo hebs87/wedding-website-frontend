@@ -15,7 +15,7 @@ const Checkbox = ({ name, checked, onChange, text, error }) => {
         />
         {text && <span className="ml-[5px] translate-y-[-2px]">{text}</span>}
       </label>
-      {error && <span className="absolute bottom-[-15px] inline-block text-[12px] text-title">{error}</span>}
+      {error && <span className="text-error absolute bottom-[-15px] inline-block text-[12px] text-title">{error}</span>}
     </div>
   );
 };

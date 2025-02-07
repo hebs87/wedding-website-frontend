@@ -108,7 +108,7 @@ const RSVPForm = () => {
             onChange={(name, value) => handleFieldChange(name, value, 'textarea')}
           />
         </div>
-        {error && <span className="inline-block text-[12px] text-title">{error}</span>}
+        {error && <span className="text-error inline-block text-[12px] text-title">{error}</span>}
         <div>
           <Button
             text="Submit"

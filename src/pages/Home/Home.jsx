@@ -57,11 +57,11 @@ const Home = () => {
         <Image image={HomeImage} />
       </div>
       {invitationData?.invitation_type === 'wedding' && (
-        <div data-aos="fade-right" data-aos-duration="1000">
+        <div data-aos="fade-in" data-aos-duration="1000">
           <Countdown />
         </div>
       )}
-      <div data-aos="fade-right" data-aos-duration="1000">
+      <div data-aos="fade-in" data-aos-duration="1000">
         <Countdown variant="party" />
       </div>
     </div>

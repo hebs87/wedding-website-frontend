@@ -27,6 +27,7 @@ const Home = () => {
   } = useInvitationContext();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     AOS.init({
       duration: 1000, // Duration of animations
       easing: 'ease-in-out', // Easing function

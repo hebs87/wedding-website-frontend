@@ -7,7 +7,7 @@ import Heading from 'components/Heading/Heading';
 import Paragraph from 'components/Paragraph/Paragraph';
 import VenueDetails from 'components/VenueDetails/VenueDetails';
 
-import { PARTY_VENUE_DETAILS, PARTY_HOTELS, WEDDING_HOTELS } from 'constants/venueDetails';
+import { PARTY_VENUE_DETAILS, PARTY_HOTELS } from 'constants/venueDetails';
 import { getInvitationData } from 'utils/helpers/getInvitationData';
 import { useInvitationContext } from 'contexts/InvitationContext/useInvitationContext';
 
@@ -26,6 +26,7 @@ const Party = () => {
   } = useInvitationContext();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     AOS.init({
       duration: 1000, // Duration of animations
       easing: 'ease-in-out', // Easing function

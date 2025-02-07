@@ -50,9 +50,11 @@ const RSVP = () => {
 
   return (
     <div className="RSVP flex flex-col gap-[20px] text-center">
-      <div data-aos="fade-in" data-aos-duration="1000">
-        <Heading text="See you there?" customClasses="capitalize" />
-      </div>
+      {!responded && (
+        <div data-aos="fade-in" data-aos-duration="1000">
+          <Heading text="See you there?" customClasses="capitalize" />
+        </div>
+      )}
       {responded ? (
         <div data-aos="fade-in" data-aos-duration="1000">
           <Paragraph

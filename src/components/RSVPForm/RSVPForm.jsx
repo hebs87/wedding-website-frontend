@@ -99,14 +99,16 @@ const RSVPForm = () => {
             </div>
           </div>
         ))}
-        <Textarea
-          label="Additional information"
-          name="additional_info"
-          placeholder="Anything else we need to know?"
-          value={formData?.invitation?.additional_info || ''}
-          onChange={(name, value) => handleFieldChange(name, value, 'textarea')}
-        />
-        {error && <span className="inline-block text-[12px] text-title">{error}</span>}
+        <div className="mt-[20px]">
+          <Textarea
+            label="Additional information"
+            name="additional_info"
+            placeholder="Anything else we need to know?"
+            value={formData?.invitation?.additional_info || ''}
+            onChange={(name, value) => handleFieldChange(name, value, 'textarea')}
+          />
+        </div>
+        {error && <span className="text-error inline-block text-[12px] text-title">{error}</span>}
         <div>
           <Button
             text="Submit"

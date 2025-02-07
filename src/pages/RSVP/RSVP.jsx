@@ -49,9 +49,9 @@ const RSVP = () => {
   const { invitation_type, responded } = invitationData;
 
   return (
-    <div className="RSVP flex flex-col gap-[20px] text-center md:gap-[30px]">
+    <div className="RSVP flex flex-col gap-[20px] text-center">
       <div data-aos="fade-in" data-aos-duration="1000">
-        <Heading text="See you there? ✍️" />
+        <Heading text="See you there?" customClasses="capitalize" />
       </div>
       {responded ? (
         <div data-aos="fade-in" data-aos-duration="1000">
@@ -69,8 +69,8 @@ const RSVP = () => {
             <Paragraph
               variant="uppercase"
               text={`
-                Please let us know if you're able to help us celebrate our 
-                ${invitation_type === 'wedding' ? 'intimate ceremony and ' : ''}Happily Ever After-party!
+                Please let us know if you're able to celebrate our 
+                ${invitation_type === 'wedding' ? 'intimate ceremony and ' : ''}Happily Ever After-party with us!
               `}
             />
           </div>
@@ -78,14 +78,13 @@ const RSVP = () => {
             <Paragraph
               variant="uppercase"
               text={`
-                Let us know who can make it by checking the relevant
-                boxes${invitation_type === 'wedding' ? ' (meal choices to follow soon)' : ''}. If you, or
-                anyone in your party can't make it, then absolutely no worries at all, just leave those boxes unchecked
-                (but still submit the form!) if that's the case. We're looking forward to hopefully seeing you there!
+                Please submit the below form to let us know who in your party can make it. For those who can't,
+                leave those boxes
+                ${invitation_type === 'wedding' ? 'unchecked... meal choices to follow soon' : 'unchecked'}!
               `}
             />
           </div>
-          <div data-aos="fade-in" data-aos-duration="1000">
+          <div data-aos="fade-in" data-aos-duration="1000" className="mt-[10px]">
             <RSVPForm />
           </div>
         </>

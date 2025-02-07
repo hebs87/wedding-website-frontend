@@ -12,14 +12,14 @@ const Textarea = ({ label, required, name, placeholder, value, onChange, rows = 
         </label>
       )}
       <textarea
-        className="rounded-[5px] border-[1px] border-grey-2 bg-transparent p-[10px] placeholder:text-text placeholder:opacity-50"
+        className="border-grey rounded-[5px] border-[1px] bg-transparent p-[10px] placeholder:text-text placeholder:opacity-50"
         id={name}
         placeholder={placeholder}
         value={value}
         onChange={(e) => onChange(name, e.target.value)}
         rows={rows}
       />
-      {error && <span className="inline-block text-[12px] text-title">{error}</span>}
+      {error && <span className="text-error inline-block text-[12px] text-title">{error}</span>}
     </div>
   );
 };

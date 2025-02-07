@@ -4,10 +4,11 @@ import AOS from 'aos';
 
 import EnterCodeBlock from 'components/EnterCodeBlock/EnterCodeBlock';
 import Heading from 'components/Heading/Heading';
+import Paragraph from 'components/Paragraph/Paragraph';
 import VenueDetails from 'components/VenueDetails/VenueDetails';
 
 import { PATH_HOME } from 'routes/paths';
-import { WEDDING_VENUE_DETAILS, MEAL_VENUE_DETAILS } from 'constants/venueDetails';
+import { WEDDING_VENUE_DETAILS, MEAL_VENUE_DETAILS, WEDDING_HOTELS } from 'constants/venueDetails';
 import { getInvitationData } from 'utils/helpers/getInvitationData';
 import { useInvitationContext } from 'contexts/InvitationContext/useInvitationContext';
 
@@ -51,15 +52,29 @@ const Wedding = () => {
     );
 
   return (
-    <div className="Wedding flex flex-col gap-[20px] text-center md:gap-[40px]">
-      <div data-aos="fade-in" data-aos-duration="1000">
-        <Heading text="Time to say 'I do' 💍" />
-      </div>
-      <div data-aos="fade-in" data-aos-duration="1000">
+    <div className="Wedding flex flex-col gap-[20px] text-center">
+      <div data-aos="fade-in" data-aos-duration="1000" className="flex flex-col gap-[20px]">
+        <Heading text="Time to say 'I do!'" customClasses="capitalize" />
         <VenueDetails {...WEDDING_VENUE_DETAILS} />
       </div>
-      <div data-aos="fade-in" data-aos-duration="1000">
+      <div data-aos="fade-in" data-aos-duration="1000" className="mt-[40px] flex flex-col gap-[20px]">
+        <Heading text="Time for dinner &amp; drinks!" customClasses="capitalize" />
         <VenueDetails {...MEAL_VENUE_DETAILS} />
+      </div>
+      <div data-aos="fade-in" data-aos-duration="1000" className="mt-[40px] flex flex-col gap-[20px]">
+        <Heading text="Places to stay" customClasses="capitalize" />
+        <div>
+          <Paragraph
+            variant="uppercase"
+            text="
+              If you fancy staying over, there are plenty of places to stay. Here are some of the nearby hotels, but
+              feel free to have a look at any others around there.
+            "
+          />
+          {WEDDING_HOTELS?.map((hotel, index) => (
+            <VenueDetails key={index} {...hotel} />
+          ))}
+        </div>
       </div>
     </div>
   );

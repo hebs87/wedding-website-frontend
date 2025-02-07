@@ -4,7 +4,13 @@ import PartyVenueImage from 'assets/images/party-venue.jpg';
 
 export const WEDDING_VENUE_DETAILS = {
   name: "St George's Hall Register Office",
-  description: ["St George's Hall, Liverpool", 'Join us for our intimate ceremony'],
+  location: "St George's Hall, Liverpool, L1 1JJ",
+  description: [
+    'Join us for our intimate ceremony, which will take place in the Grand Jury Room at 2pm.',
+    'We ask that you arrive for 1:30pm.',
+    'Please enter the building via the South Entrance to the hall, and head to the Power and Glory Landing.',
+    'More information, including directions and where to park, can be found by clicking the links below.',
+  ],
   image: WeddingVenueImage,
   links: [
     {
@@ -24,7 +30,16 @@ export const WEDDING_VENUE_DETAILS = {
 
 export const MEAL_VENUE_DETAILS = {
   name: 'Riva Blu',
-  description: ['Riva Blu, Liverpool'],
+  location: '1 Castle St, Liverpool, L2 4SW',
+  description: [
+    'Join us for our first date night as Mr & Mrs Hebbar!',
+    "We will have exclusive access to 'The Bullion Room', which is located downstairs in the restaurant, from 4pm " +
+      'till late.',
+    'Here, we will be served delicious canapés and welcome drinks on arrival, and a fabulous three-course dinner. ' +
+      'We will also have access to our own bar... cocktails anyone?!',
+    'All we ask is that you bring your appetites and good vibes!',
+    'More venue information, can be found by clicking the links below.',
+  ],
   image: MealVenueImage,
   links: [
     {
@@ -44,7 +59,16 @@ export const MEAL_VENUE_DETAILS = {
 
 export const PARTY_VENUE_DETAILS = {
   name: 'Ten Streets Wine',
-  description: ['Ten Streets Wine, Liverpool'],
+  location: '30 Dublin Street, Liverpool, L3 7DT',
+  description: [
+    'Join us for our happily ever after-party from 7pm, onwards, at the fabulous Ten Streets Wine!',
+    'This is not to be mixed up with Ten Streets Social. Please make sure you are on Dublin Street and look for the Ten Streets Wine sign, pictured above.',
+    "There is some on-road parking outside the venue, and it is a 3 minute (or a 20 minute walk if you're up for it) taxi journey from Sandhills Station.",
+    'There will be plenty of alcoholic and non-alcoholic drinks to choose from, a cold buffet, and Pizzeria Miki will be making an appearance in his pizza van!',
+    'And yes, there will be wedding cake for those with a sweet tooth!',
+    'We ask that you bring your dancing shoes and a good vibes!',
+    'We hope to see you there!',
+  ],
   image: PartyVenueImage,
   links: [
     {
@@ -61,3 +85,72 @@ export const PARTY_VENUE_DETAILS = {
     },
   ],
 };
+
+export const WEDDING_HOTELS = [
+  {
+    location: '62 Castle Street Hotel, 62 Castle Street, Liverpool, L2 7LQ',
+    links: [
+      {
+        variant: 'website',
+        href: 'https://62castlestreethotel.co.uk/',
+      },
+    ],
+  },
+  {
+    location: '1 Water Street Hotel, 1 Water Street, Liverpool, L2 0RD',
+    links: [
+      {
+        variant: 'website',
+        href: 'https://www.liverpool-hotel.com/en/property/1-water-street.html',
+      },
+    ],
+  },
+  {
+    location: 'Aloft, 1 North John St, Liverpool, L2 5QW',
+    links: [
+      {
+        variant: 'website',
+        href: 'https://www.marriott.com/en-us/hotels/lplal-aloft-liverpool/overview/',
+      },
+    ],
+  },
+];
+
+export const PARTY_HOTELS = [
+  {
+    location: 'Titanic Hotel, Stanley Dock, Regent Road, Liverpool, L3 0AN',
+    links: [
+      {
+        variant: 'website',
+        href: 'https://www.titanichotelliverpool.com/',
+      },
+    ],
+  },
+  {
+    location: 'Malmaison, 7 William Jessop Way, Liverpool, L3 1QZ',
+    links: [
+      {
+        variant: 'website',
+        href: 'https://www.malmaison.com/locations/liverpool/',
+      },
+    ],
+  },
+  {
+    location: 'Melia, 43 Old Hall St, Liverpool, L3 9PP',
+    links: [
+      {
+        variant: 'website',
+        href: 'https://www.melia.com/en/hotels/united-kingdom/liverpool/innside-liverpool',
+      },
+    ],
+  },
+  {
+    location: 'Radisson Blu, 107 Old Hall St, Liverpool, L3 9BD',
+    links: [
+      {
+        variant: 'website',
+        href: 'https://www.radissonhotels.com/en-us/hotels/radisson-blu-liverpool',
+      },
+    ],
+  },
+];

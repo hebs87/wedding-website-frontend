@@ -51,7 +51,7 @@ const Home = () => {
   return (
     <div className="Home flex flex-col gap-[20px] text-center md:gap-[40px]">
       <div data-aos="fade-in" data-aos-duration="1000">
-        <Heading text="We're finally getting hitched 🤵🏾‍♂️👰🏻‍♀️" />
+        <Heading text="We're finally getting hitched!" customClasses="capitalize" />
       </div>
       <div className="mx-auto w-full max-w-[600px]" data-aos="fade-in" data-aos-duration="1000">
         <Image image={HomeImage} />

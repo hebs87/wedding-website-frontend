@@ -51,7 +51,7 @@ const Gallery = () => {
   return (
     <div className="Gallery flex flex-col gap-[20px] text-center md:gap-[40px]">
       <div data-aos="fade-in" data-aos-duration="1000">
-        <Heading text="Share your pics 📸" />
+        <Heading text="Share your pics" customClasses="capitalize" />
       </div>
     </div>
   );

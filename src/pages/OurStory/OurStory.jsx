@@ -49,7 +49,7 @@ const OurStory = () => {
   return (
     <div className="OurStory flex flex-col gap-[20px] text-center md:gap-[40px]">
       <div data-aos="fade-in" data-aos-duration="1000">
-        <Heading text="How we got here 💖" />
+        <Heading text="How we got here..." customClasses="capitalize" />
       </div>
       <div data-aos="fade-in" data-aos-duration="1000" className="text-left md:text-center">
         {OUR_STORY_POEM.map((paragraph, index) => (

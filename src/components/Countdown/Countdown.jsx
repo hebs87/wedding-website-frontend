@@ -6,8 +6,6 @@ import Paragraph from 'components/Paragraph/Paragraph';
 
 import './Countdown.styles.scss';
 
-// Heading (secondary)
-// Paragraph (uppercase)
 const Countdown = ({ variant = 'wedding' }) => {
   const [countdownData, setCountdownData] = useState({
     days: 0,

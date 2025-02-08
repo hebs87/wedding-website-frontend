@@ -7,7 +7,7 @@ import Paragraph from 'components/Paragraph/Paragraph';
 import Input from 'components/Input/Input';
 import Button from 'components/Button/Button';
 
-import { PATH_HOME, PATH_OUR_STORY, PATH_WEDDING, PATH_PARTY, PATH_RSVP, PATH_GALLERY } from 'routes/paths';
+import { PATH_HOME, PATH_OUR_STORY, PATH_WEDDING, PATH_PARTY, PATH_RSVP } from 'routes/paths';
 import { getInvitation } from 'api';
 import { useInvitationContext } from 'contexts/InvitationContext/useInvitationContext';
 
@@ -58,8 +58,6 @@ const EnterCodeBlock = ({ isGallery = false }) => {
         path = `${PATH_PARTY}/${code}`;
       } else if (pathname.includes(PATH_RSVP)) {
         path = `${PATH_RSVP}/${code}`;
-      } else if (pathname.includes(PATH_GALLERY)) {
-        path = `${PATH_GALLERY}/${code}`;
       } else {
         path = `${PATH_HOME}${code}`;
       }

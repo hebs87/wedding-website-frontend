@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 
+import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
+
 import './Checkbox.styles.scss';
 
 const Checkbox = ({ name, checked, onChange, text, error }) => {
@@ -15,7 +17,7 @@ const Checkbox = ({ name, checked, onChange, text, error }) => {
         />
         {text && <span className="ml-[5px] translate-y-[-2px]">{text}</span>}
       </label>
-      {error && <span className="text-error absolute bottom-[-15px] inline-block text-[12px] text-title">{error}</span>}
+      {error && <ErrorMessage text={error} customClasses="absolute bottom-[-15px]" />}
     </div>
   );
 };

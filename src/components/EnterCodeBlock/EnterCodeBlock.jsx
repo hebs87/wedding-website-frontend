@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import { useParams, useLocation, useNavigate } from 'react-router';
 
 import Heading from 'components/Heading/Heading';
@@ -10,9 +11,11 @@ import { PATH_HOME, PATH_OUR_STORY, PATH_WEDDING, PATH_PARTY, PATH_RSVP, PATH_GA
 import { getInvitation } from 'api';
 import { useInvitationContext } from 'contexts/InvitationContext/useInvitationContext';
 
+import { GALLERY_CODE } from 'config/config';
+
 import './EnterCodeBlock.styles.scss';
 
-const EnterCodeBlock = () => {
+const EnterCodeBlock = ({ isGallery = false }) => {
   const { code: codeParam } = useParams();
   const [code, setCode] = useState('');
   const [isValid, setIsValid] = useState(false);
@@ -31,6 +34,16 @@ const EnterCodeBlock = () => {
   const handleSubmit = async () => {
     if (code?.length !== 10) return;
 
+    // Validate the code internally in the gallery page
+    if (isGallery) {
+      if (code.toLowerCase() !== GALLERY_CODE.toLowerCase()) {
+        setError('Sorry, that code is not valid. Please try again');
+        return;
+      }
+      return navigate(`${PATH_HOME}${code}`);
+    }
+
+    // Validate the code in the API if we're not accessing the gallery
     try {
       setIsLoading(true);
       setError('');
@@ -85,6 +98,8 @@ const EnterCodeBlock = () => {
   );
 };
 
-EnterCodeBlock.propTypes = {};
+EnterCodeBlock.propTypes = {
+  isGallery: PropTypes.bool,
+};
 
 export default EnterCodeBlock;

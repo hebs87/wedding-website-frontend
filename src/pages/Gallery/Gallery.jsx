@@ -1,29 +1,17 @@
 import { useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router';
+import { useParams } from 'react-router';
 import AOS from 'aos';
 
 import EnterCodeBlock from 'components/EnterCodeBlock/EnterCodeBlock';
 import Heading from 'components/Heading/Heading';
 
-import { PATH_HOME } from 'routes/paths';
-import { getInvitationData } from 'utils/helpers/getInvitationData';
-import { useInvitationContext } from 'contexts/InvitationContext/useInvitationContext';
+import { GALLERY_CODE } from 'config/config';
 
 import 'aos/dist/aos.css';
 import './Gallery.styles.scss';
 
 const Gallery = () => {
   const { code } = useParams();
-  const {
-    invitationData,
-    invitationError,
-    invitationLoading,
-    setInvitationLoading,
-    setInvitationData,
-    setInvitationError,
-  } = useInvitationContext();
-  const navigate = useNavigate();
-
   useEffect(() => {
     window.scrollTo(0, 0);
     AOS.init({
@@ -34,18 +22,10 @@ const Gallery = () => {
     AOS.refresh();
   }, []);
 
-  useEffect(() => {
-    if (!code || (invitationData && invitationData?.invitation_type !== 'wedding')) return navigate(PATH_HOME);
-
-    getInvitationData(code, invitationData, setInvitationError, setInvitationData, setInvitationLoading);
-  }, [code, invitationData]);
-
-  if (invitationLoading) return;
-
-  if (invitationError)
+  if (!code || code !== GALLERY_CODE)
     return (
       <div data-aos="fade-in" data-aos-duration="1000" className="mx-auto max-w-[600px]">
-        <EnterCodeBlock />
+        <EnterCodeBlock isGallery />
       </div>
     );
 

@@ -6,25 +6,28 @@ import Footer from 'components/Footer/Footer';
 import Router from 'routes/Router';
 
 import { useInvitationContext } from 'contexts/InvitationContext/useInvitationContext';
+import { GALLERY_BASE_URL } from 'config/config';
 
 const App = () => {
   const { invitationLoading } = useInvitationContext();
+  const { href } = window?.location || {};
+  const isGallery = href?.includes(GALLERY_BASE_URL);
 
   return (
     <>
-      {invitationLoading ? (
+      {!isGallery && invitationLoading ? (
         <>
           <WrappedLoadingSpinner />
           <PageContainer>
-            <Router />
+            <Router isGallery={isGallery} />
           </PageContainer>
         </>
       ) : (
         <>
-          <Navbar />
-          <MobileNavbar />
+          <Navbar isGallery={isGallery} />
+          <MobileNavbar isGallery={isGallery} />
           <PageContainer>
-            <Router />
+            <Router isGallery={isGallery} />
           </PageContainer>
           <Footer />
         </>

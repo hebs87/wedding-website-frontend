@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 
+import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
+
 import './Input.styles.scss';
 
 const Input = ({ type = 'text', label, required, name, placeholder, value, onChange, handleSubmit, error }) => {
@@ -16,7 +18,7 @@ const Input = ({ type = 'text', label, required, name, placeholder, value, onCha
         </label>
       )}
       <input
-        className="border-grey rounded-[5px] border-[1px] bg-transparent p-[10px] placeholder:text-text placeholder:opacity-50"
+        className="rounded-[5px] border-[1px] border-grey bg-transparent p-[10px] placeholder:text-text placeholder:opacity-50"
         type={type}
         id={name}
         placeholder={placeholder}
@@ -24,7 +26,7 @@ const Input = ({ type = 'text', label, required, name, placeholder, value, onCha
         onChange={(e) => onChange(name, e.target.value)}
         onKeyDown={handleKeyDown}
       />
-      {error && <span className="text-error inline-block text-[12px] text-title">{error}</span>}
+      {error && <ErrorMessage text={error} />}
     </div>
   );
 };

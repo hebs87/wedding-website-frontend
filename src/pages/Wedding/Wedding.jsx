@@ -59,7 +59,7 @@ const Wedding = () => {
         <VenueDetails {...WEDDING_VENUE_DETAILS} />
       </div>
       <div data-aos="fade-in" data-aos-duration="1000" className="mt-[40px] flex flex-col gap-[20px]">
-        <Heading text="Time for dinner &amp; drinks!" customClasses="capitalize" />
+        <Heading text="Time for dinner drinks!" customClasses="capitalize" />
         <VenueDetails {...MEAL_VENUE_DETAILS} />
       </div>
       <div data-aos="fade-in" data-aos-duration="1000" className="mt-[40px] flex flex-col gap-[20px]">

@@ -62,11 +62,16 @@ export const PARTY_VENUE_DETAILS = {
   location: '30 Dublin Street, Liverpool, L3 7DT',
   description: [
     'Join us for our happily ever after-party from 7pm, onwards, at the fabulous Ten Streets Wine!',
-    'This is not to be mixed up with Ten Streets Social. Please make sure you are on Dublin Street and look for the Ten Streets Wine sign, pictured above.',
-    "There is some on-road parking outside the venue, and it is a 3 minute (or a 20 minute walk if you're up for it) taxi journey from Sandhills Station.",
-    'There will be plenty of alcoholic and non-alcoholic drinks to choose from, a cold buffet, and Pizzeria Miki will be making an appearance in his pizza van!',
+    'This is not to be mixed up with Ten Streets Social. Please make sure you are on Dublin Street and look for the ' +
+      'Ten Streets Wine sign, pictured above.',
+    "There is some on-road parking outside the venue, and it is a 3 minute (or a 20 minute walk if you're up for " +
+      'it) taxi journey from Sandhills Station.',
+    'There will be plenty of alcoholic and non-alcoholic drinks to choose from, a cold buffet, and Pizzeria Miki ' +
+      'will be making an appearance in his pizza van!',
     'And yes, there will be wedding cake for those with a sweet tooth!',
     'We ask that you bring your dancing shoes and a good vibes!',
+    'Your presence means so much to us and is the greatest gift we could ask for! Should you wish to honour us with ' +
+      'a gift, a contribution towards our honeymoon would be sincerely appreciated!',
     'We hope to see you there!',
   ],
   image: PartyVenueImage,

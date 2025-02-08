@@ -7,6 +7,7 @@ import Checkbox from 'components/Checkbox/Checkbox';
 import Textarea from 'components/Textarea/Textarea';
 import Button from 'components/Button/Button';
 import RSVPModal from 'components/RSVPModal/RSVPModal';
+import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
 
 import { rsvp } from 'api';
 import { useInvitationContext } from 'contexts/InvitationContext/useInvitationContext';
@@ -108,7 +109,7 @@ const RSVPForm = () => {
             onChange={(name, value) => handleFieldChange(name, value, 'textarea')}
           />
         </div>
-        {error && <span className="inline-block text-[12px] text-error">{error}</span>}
+        {error && <ErrorMessage text={error} />}
         <div>
           <Button
             text="Submit"

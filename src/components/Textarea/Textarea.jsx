@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 
+import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
+
 import './Textarea.styles.scss';
 
 const Textarea = ({ label, required, name, placeholder, value, onChange, rows = 3, error }) => {
@@ -19,7 +21,7 @@ const Textarea = ({ label, required, name, placeholder, value, onChange, rows = 
         onChange={(e) => onChange(name, e.target.value)}
         rows={rows}
       />
-      {error && <span className="inline-block text-[12px] text-error">{error}</span>}
+      {error && <ErrorMessage text={error} />}
     </div>
   );
 };

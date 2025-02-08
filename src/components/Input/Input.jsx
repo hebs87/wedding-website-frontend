@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 
+import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
+
 import './Input.styles.scss';
 
 const Input = ({ type = 'text', label, required, name, placeholder, value, onChange, handleSubmit, error }) => {
@@ -24,7 +26,7 @@ const Input = ({ type = 'text', label, required, name, placeholder, value, onCha
         onChange={(e) => onChange(name, e.target.value)}
         onKeyDown={handleKeyDown}
       />
-      {error && <span className="inline-block text-[12px] text-error">{error}</span>}
+      {error && <ErrorMessage text={error} />}
     </div>
   );
 };

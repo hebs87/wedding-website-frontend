@@ -8,7 +8,7 @@ import { useInvitationContext } from 'contexts/InvitationContext/useInvitationCo
 
 import './Logo.styles.scss';
 
-const Logo = ({ setMobileNavOpen }) => {
+const Logo = ({ setMobileNavOpen, isGallery }) => {
   const { invitationData } = useInvitationContext();
   const { code } = invitationData || {};
   const path = `${code ? `/${code}` : PATH_HOME}`;
@@ -17,7 +17,7 @@ const Logo = ({ setMobileNavOpen }) => {
     <NavLink
       data-testid="Logo"
       className="Logo pt-[5px] text-[32px]"
-      to={path}
+      to={isGallery ? null : path}
       onClick={() => (setMobileNavOpen ? setMobileNavOpen(false) : {})}
     >
       S&K
@@ -27,6 +27,7 @@ const Logo = ({ setMobileNavOpen }) => {
 
 Logo.propTypes = {
   setMobileNavOpen: PropTypes.func,
+  isGallery: PropTypes.bool.isRequired,
 };
 
 export default Logo;
